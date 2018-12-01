@@ -14,6 +14,8 @@
     <ClInclude Include="CBullet.h" />
     <ClInclude Include="CCombo.h" />
     <ClInclude Include="CEnemy.h" />
+    <ClInclude Include="CEnemyRenderer.h" />
+    <ClInclude Include="CEnemyUpdater.h" />
     <ClInclude Include="CEnemy_Player.h" />
     <ClInclude Include="CGameHost.h" />
     <ClInclude Include="CHit.h" />
@@ -32,6 +34,8 @@
     <ClCompile Include="CBullet.cpp" />
     <ClCompile Include="CCombo.cpp" />
     <ClCompile Include="CEnemy.cpp" />
+    <ClCompile Include="CEnemyRenderer.cpp" />
+    <ClCompile Include="CEnemyUpdater.cpp" />
     <ClCompile Include="CGameHost.cpp" />
     <ClCompile Include="CHit.cpp" />
     <ClCompile Include="CHp.cpp" />

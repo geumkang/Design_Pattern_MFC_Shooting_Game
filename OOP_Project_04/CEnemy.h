@@ -8,29 +8,29 @@
 #include "CCombo.h"
 #include "CHit.h"
 #define ENEMY_SIZE 25
-#define MAX_ENEMY_SPEED 5
 #define LEFT 1
 #define RIGHT 2
 #define UPGRADE 0
 #define NON_UPGRADE 1
 
+#include "CTransform.h"
+#include "CEnemyRenderer.h"
+#include "CEnemyUpdater.h"
+
 class CEnemy {
-	int X, Y;
 	int MoveMode;
 	int Delay;
-
-	int AlphaSpeed;
-	int PreKey;
 
 	int ComboDelay;
 	BOOL BulletMode;
 
-	HBRUSH EnemyBrush1;
-	HBRUSH EnemyBrush2;
-	HPEN EnemyPen;
-
 	CBullet *Bullet;
 public:
+
+	CTransform *transform;
+	CEnemyRenderer* renderer;
+	CEnemyUpdater* updater;
+
 	CEnemy();
 	~CEnemy();
 
@@ -46,8 +46,8 @@ public:
 	CPlayerBody(int PosX, int PosY);
 	~CPlayerBody();
 
-	int GetPosX(){return m_PosX;}
-	int GetPosY(){return m_PosY;}
+	int GetPosX() { return m_PosX; }
+	int GetPosY() { return m_PosY; }
 
 	void Update();
 	void Render(HDC hdc);

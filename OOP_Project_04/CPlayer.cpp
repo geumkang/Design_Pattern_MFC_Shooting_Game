@@ -2,7 +2,7 @@
 #include "Resource.h"
 #pragma comment(lib,"msimg32.lib")
 
-int special_count = 3 ;
+int special_count = 3;
 
 CPlayer::CPlayer(HINSTANCE hInstance) {
 	hPlayerBit = LoadBitmap(hInstance,MAKEINTRESOURCE(IDB_CHARACTER));
