@@ -3,14 +3,19 @@
 
 #include <windows.h>
 
-#define MAX_TIME_COLOR 4
+#include "CTransform.h"
+#include "CHitRenderer.h"
+#include "CHitUpdater.h"
 
 class CTime {
 	int nTime;
 
-	COLORREF TimeColor[MAX_TIME_COLOR];
-	HFONT hTimeFont;
 public:
+
+	CTransform* transform;
+	CHitRenderer* renderer;
+	CHitUpdater* updater;
+
 	CTime();
 	~CTime();
 

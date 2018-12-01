@@ -28,6 +28,8 @@
     <ClInclude Include="CPlayerRenderer.h" />
     <ClInclude Include="CPlayerUpdater.h" />
     <ClInclude Include="CTime.h" />
+    <ClInclude Include="CTimeRenderer.h" />
+    <ClInclude Include="CTimeUpdater.h" />
     <ClInclude Include="CTransform.h" />
     <ClInclude Include="PlayerDownCommand.h" />
     <ClInclude Include="PlayerLeftCommand.h" />
@@ -52,6 +54,8 @@
     <ClCompile Include="CPlayerRenderer.cpp" />
     <ClCompile Include="CPlayerUpdater.cpp" />
     <ClCompile Include="CTime.cpp" />
+    <ClCompile Include="CTimeRenderer.cpp" />
+    <ClCompile Include="CTimeUpdater.cpp" />
     <ClCompile Include="CTransform.cpp" />
     <ClCompile Include="PlayerDownCommand.cpp" />
     <ClCompile Include="PlayerLeftCommand.cpp" />

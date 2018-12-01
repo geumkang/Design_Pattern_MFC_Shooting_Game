@@ -1,24 +1,25 @@
 #include "CTime.h"
 
 CTime::CTime() {
+
+	this->transform = new CTransform(430, 395);
+	this->renderer = new CHitRenderer(this->transform);
+	this->updater = new CHitUpdater(transform);
+	this->renderer->setHit(&nTime);
+
 	nTime = 0;
-	int color = 0;
-	for(int i=0;i<MAX_TIME_COLOR;i++) {
-		TimeColor[i] = RGB(255,color,color);
-		color += 256/MAX_TIME_COLOR;
-	}
-	hTimeFont = CreateFont(30,0,0,0,1000,1,0,0,HANGEUL_CHARSET,0,0,0,VARIABLE_PITCH | FF_ROMAN,TEXT("¸¼Àº °íµñ"));
+	
 }
 
 CTime::~CTime() {
-	DeleteObject(hTimeFont);
 }
 
 void CTime::Update() {
 }
 
 void CTime::Render(HDC hdc) {
-	TCHAR szTimeString[32];
+	this->renderer->render(hdc);
+	/*TCHAR szTimeString[32];
 
 	wsprintf(szTimeString,TEXT("%-5d Time!"),nTime);
 	HFONT OldFont = (HFONT)SelectObject(hdc,hTimeFont);
@@ -27,7 +28,7 @@ void CTime::Render(HDC hdc) {
 		SetTextColor(hdc,TimeColor[i]);
 		TextOut(hdc,430+i,395+i,szTimeString,lstrlen(szTimeString));
 	}
-	SelectObject(hdc,OldFont);
+	SelectObject(hdc,OldFont);*/
 }
 
 void CTime::InitTime() {

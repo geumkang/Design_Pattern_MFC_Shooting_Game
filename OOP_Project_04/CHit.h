@@ -3,7 +3,6 @@
 
 #include <windows.h>
 
-
 #include "CTransform.h"
 #include "CHitRenderer.h"
 #include "CHitUpdater.h"

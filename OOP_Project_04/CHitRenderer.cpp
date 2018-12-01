@@ -32,6 +32,6 @@ void CHitRenderer::render(HDC hdc)
 	SelectObject(hdc, OldFont);
 }
 
-void CHitRenderer::setHit(int *nHit){
+void CHitRenderer::setHit(int* nHit){
 	this->nHit = nHit;
 }
