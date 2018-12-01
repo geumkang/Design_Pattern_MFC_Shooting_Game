@@ -19,6 +19,8 @@
     <ClInclude Include="CEnemy_Player.h" />
     <ClInclude Include="CGameHost.h" />
     <ClInclude Include="CHit.h" />
+    <ClInclude Include="CHitRenderer.h" />
+    <ClInclude Include="CHitUpdater.h" />
     <ClInclude Include="CHp.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="Controller.h" />
@@ -41,6 +43,8 @@
     <ClCompile Include="CEnemyUpdater.cpp" />
     <ClCompile Include="CGameHost.cpp" />
     <ClCompile Include="CHit.cpp" />
+    <ClCompile Include="CHitRenderer.cpp" />
+    <ClCompile Include="CHitUpdater.cpp" />
     <ClCompile Include="CHp.cpp" />
     <ClCompile Include="Command.cpp" />
     <ClCompile Include="Controller.cpp" />

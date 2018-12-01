@@ -3,14 +3,22 @@
 
 #include <windows.h>
 
-#define MAX_Hit_COLOR 4
+
+#include "CTransform.h"
+#include "CHitRenderer.h"
+#include "CHitUpdater.h"
 
 class CHit {
 	int nHit;
 
-	COLORREF HitColor[MAX_Hit_COLOR];
-	HFONT hHitFont;
+	/*COLORREF HitColor[MAX_Hit_COLOR];
+	HFONT hHitFont;*/
 public:
+
+	CTransform* transform;
+	CHitRenderer* renderer;
+	CHitUpdater* updater;
+
 	CHit();
 	~CHit();
 

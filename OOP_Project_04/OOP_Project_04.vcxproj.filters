@@ -61,6 +61,12 @@
     <ClCompile Include="Command.cpp">
       <Filter>소스 파일\Command</Filter>
     </ClCompile>
+    <ClCompile Include="CHitRenderer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CHitUpdater.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CBullet.h">
@@ -125,6 +131,12 @@
     </ClInclude>
     <ClInclude Include="PlayerUpCommand.h">
       <Filter>헤더 파일\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="CHitUpdater.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CHitRenderer.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
