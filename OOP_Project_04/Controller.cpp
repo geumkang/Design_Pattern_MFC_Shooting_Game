@@ -21,10 +21,12 @@ void Controller::doSpecial()
 
 void Controller::doLeft()
 {
+	leftCommand->execute();
 }
 
 void Controller::doRight()
 {
+	rightCommand->execute();
 }
 
 void Controller::doUp()
@@ -34,6 +36,7 @@ void Controller::doUp()
 
 void Controller::doDown()
 {
+	downCommand->execute();
 }
 
 void Controller::setUpCommand(Command * command)

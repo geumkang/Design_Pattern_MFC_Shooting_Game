@@ -59,3 +59,11 @@ void CPlayerUpdater::pushDown()
 	if (AlphaSpeed < MAX_SPEED) AlphaSpeed++;
 	PreKey = DOWN;
 }
+
+void CPlayerUpdater::pushAttack()
+{
+}
+
+void CPlayerUpdater::pushSpecial()
+{
+}

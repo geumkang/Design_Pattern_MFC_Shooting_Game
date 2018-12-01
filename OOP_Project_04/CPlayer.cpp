@@ -34,13 +34,13 @@ CPlayer::~CPlayer() {
 void CPlayer::KeyUpdate(SHORT wParam, CCombo *Combo) {
 	int i;
 	if(wParam==VK_LEFT) { //Pressed Left Key
-		updater->pushLeft();
+		//updater->pushLeft();
 	} else if(wParam==VK_RIGHT) { //Pressed Right Key
-		updater->pushRight();
+		//updater->pushRight();
 	} else if(wParam==VK_UP) { //Pressed Up Key
-		updater->pushUp();
+		//updater->pushUp();
 	} else if(wParam==VK_DOWN) { //Pressed Down Key
-		updater->pushDown();
+		//updater->pushDown();
 	} else if(wParam == 'Z') { //Pressed Z (Attack)
 		Attack(Combo);
 	} else if(wParam == 'X') { //Pressed Z (Special Attack)
