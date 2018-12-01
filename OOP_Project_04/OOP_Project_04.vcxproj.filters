@@ -1,24 +1,66 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="소스 파일">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="헤더 파일">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="리소스 파일">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="소스 파일\Command">
-      <UniqueIdentifier>{6045eae6-ab93-4e00-99ff-5aaf677921a4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="헤더 파일\Command">
-      <UniqueIdentifier>{26558644-5b99-44bd-beb1-0512bd9ae318}</UniqueIdentifier>
-    </Filter>
+    <ClCompile Include="CBullet.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CCombo.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CEnemy.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CEnemyRenderer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CEnemyUpdater.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CGameHost.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CHit.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CHp.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Controller.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayerRenderer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayerUpdater.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CTime.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CTransform.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="WinMain.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerDownCommand.cpp">
+      <Filter>소스 파일\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerLeftCommand.cpp">
+      <Filter>소스 파일\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerRightCommand.cpp">
+      <Filter>소스 파일\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerUpCommand.cpp">
+      <Filter>소스 파일\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Command.cpp">
+      <Filter>소스 파일\Command</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CBullet.h">
@@ -33,6 +75,12 @@
     <ClInclude Include="CEnemy_Player.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="CEnemyRenderer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CEnemyUpdater.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
     <ClInclude Include="CGameHost.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -42,16 +90,10 @@
     <ClInclude Include="CHp.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Controller.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
     <ClInclude Include="CPlayer.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="CTime.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="CTransform.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="CPlayerRenderer.h">
@@ -60,20 +102,18 @@
     <ClInclude Include="CPlayerUpdater.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Controller.h">
+    <ClInclude Include="CTime.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerUpCommand.h">
-      <Filter>헤더 파일\Command</Filter>
+    <ClInclude Include="CTransform.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Command.h">
       <Filter>헤더 파일\Command</Filter>
     </ClInclude>
-    <ClInclude Include="CEnemyRenderer.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="CEnemyUpdater.h">
-      <Filter>헤더 파일</Filter>
     <ClInclude Include="PlayerDownCommand.h">
       <Filter>헤더 파일\Command</Filter>
     </ClInclude>
@@ -83,78 +123,37 @@
     <ClInclude Include="PlayerRightCommand.h">
       <Filter>헤더 파일\Command</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="CBullet.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="CCombo.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="CEnemy.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="CGameHost.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="CHit.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="CHp.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="CPlayer.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="CTime.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="WinMain.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="CTransform.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="CPlayerRenderer.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="CPlayerUpdater.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Controller.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerUpCommand.cpp">
-      <Filter>소스 파일\Command</Filter>
-    </ClCompile>
-    <ClCompile Include="Command.cpp">
-      <Filter>소스 파일\Command</Filter>
-    </ClCompile>
-    <ClCompile Include="CEnemyRenderer.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="CEnemyUpdater.cpp">
-      <Filter>소스 파일</Filter>
-    <ClCompile Include="PlayerDownCommand.cpp">
-      <Filter>소스 파일\Command</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerLeftCommand.cpp">
-      <Filter>소스 파일\Command</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerRightCommand.cpp">
-      <Filter>소스 파일\Command</Filter>
-    </ClCompile>
+    <ClInclude Include="PlayerUpCommand.h">
+      <Filter>헤더 파일\Command</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Character.bmp">
-      <Filter>리소스 파일</Filter>
+      <Filter>리소스파일</Filter>
     </Image>
     <Image Include="Map.bmp">
-      <Filter>리소스 파일</Filter>
+      <Filter>리소스파일</Filter>
     </Image>
     <Image Include="Loading.bmp">
-      <Filter>리소스 파일</Filter>
+      <Filter>리소스파일</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="리소스파일">
+      <UniqueIdentifier>{d9388973-12df-4113-bad1-b77b05ac0c49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{f12fd603-73dd-458c-bbda-ed22e4c342bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Command">
+      <UniqueIdentifier>{d2e3c63d-81f5-4582-87b6-dae473596a10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{53faf242-3156-4cf3-b5a7-e0c3d53a5b75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Command">
+      <UniqueIdentifier>{312bebcd-85fc-41e2-b108-95b239b76dbf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="OOP_Project_04.rc">
