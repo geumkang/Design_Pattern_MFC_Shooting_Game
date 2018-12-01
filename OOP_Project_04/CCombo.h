@@ -3,14 +3,19 @@
 
 #include <windows.h>
 
-#define MAX_COMBO_COLOR 4
+#include "CTransform.h"
+#include "CHitRenderer.h"
+#include "CHitUpdater.h"
 
 class CCombo {
 	int nCombo;
 
-	COLORREF ComboColor[MAX_COMBO_COLOR];
-	HFONT hComboFont;
 public:
+
+	CTransform* transform;
+	CHitRenderer* renderer;
+	CHitUpdater* updater;
+
 	CCombo();
 	~CCombo();
 

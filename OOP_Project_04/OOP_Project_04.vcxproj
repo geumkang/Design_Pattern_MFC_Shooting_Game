@@ -13,6 +13,8 @@
   <ItemGroup>
     <ClInclude Include="CBullet.h" />
     <ClInclude Include="CCombo.h" />
+    <ClInclude Include="CComboRenderer.h" />
+    <ClInclude Include="CComboUpdater.h" />
     <ClInclude Include="CEnemy.h" />
     <ClInclude Include="CEnemyRenderer.h" />
     <ClInclude Include="CEnemyUpdater.h" />
@@ -40,6 +42,8 @@
   <ItemGroup>
     <ClCompile Include="CBullet.cpp" />
     <ClCompile Include="CCombo.cpp" />
+    <ClCompile Include="CComboRenderer.cpp" />
+    <ClCompile Include="CComboUpdater.cpp" />
     <ClCompile Include="CEnemy.cpp" />
     <ClCompile Include="CEnemyRenderer.cpp" />
     <ClCompile Include="CEnemyUpdater.cpp" />

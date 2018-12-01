@@ -1,35 +1,24 @@
 #include "CCombo.h"
 
 CCombo::CCombo() {
+
+	this->transform = new CTransform(430, 420);
+	this->renderer = new CHitRenderer(this->transform);
+	this->updater = new CHitUpdater(transform);
+	this->renderer->setHit(&nCombo);
+
 	nCombo = 0;
-	int color = 0;
-	for(int i=0;i<MAX_COMBO_COLOR;i++) {
-		ComboColor[i] = RGB(255,color,color);
-		color += 256/MAX_COMBO_COLOR;
-	}
-	hComboFont = CreateFont(30,0,0,0,1000,1,0,0,HANGEUL_CHARSET,0,0,0,VARIABLE_PITCH | FF_ROMAN,TEXT("¸¼Àº °íµñ"));
 }
 
 CCombo::~CCombo() {
-	DeleteObject(hComboFont);
+	
 }
 
 void CCombo::Update() {
 }
 
 void CCombo::Render(HDC hdc) {
-	TCHAR szComboString[32];
-
-	if(nCombo>1) {
-		wsprintf(szComboString,TEXT("%-3d COMBO!"),nCombo);
-		HFONT OldFont = (HFONT)SelectObject(hdc,hComboFont);
-		SetBkMode(hdc,TRANSPARENT);
-		for(int i=MAX_COMBO_COLOR-1;i>=0;i--) {
-			SetTextColor(hdc,ComboColor[i]);
-			TextOut(hdc,430+i,420+i,szComboString,lstrlen(szComboString));
-		}
-		SelectObject(hdc,OldFont);
-	}
+	this->renderer->render(hdc);
 }
 
 void CCombo::InitCombo() {

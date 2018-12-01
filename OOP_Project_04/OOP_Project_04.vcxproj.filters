@@ -67,8 +67,14 @@
     <ClCompile Include="CHitUpdater.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="CTimeRenderer.cpp" />
-    <ClCompile Include="CTimeUpdater.cpp" />
+    <ClCompile Include="CTimeRenderer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CTimeUpdater.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CComboRenderer.cpp" />
+    <ClCompile Include="CComboUpdater.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CBullet.h">
@@ -140,8 +146,14 @@
     <ClInclude Include="CHitRenderer.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="CTimeRenderer.h" />
-    <ClInclude Include="CTimeUpdater.h" />
+    <ClInclude Include="CTimeRenderer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CTimeUpdater.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CComboRenderer.h" />
+    <ClInclude Include="CComboUpdater.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Character.bmp">
