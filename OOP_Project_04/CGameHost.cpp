@@ -1,9 +1,17 @@
 #include "CGameHost.h"
 #include "Resource.h"
+#include "PlayerUpCommand.h"
+
+CGameHost* CGameHost::gameHost;
 
 CGameHost::CGameHost(HINSTANCE hInstance) {
 	BgGround = LoadBitmap(hInstance,MAKEINTRESOURCE(IDB_MAP)); //Init
 	Player = new CPlayer(hInstance);
+
+	controller = new Controller();
+	Command* upcommand = new PlayerUpCommand(Player->updater);
+	controller->setUpCommand(upcommand);
+
 	PlayerHp = new CHp(10,10,CHP_PLAYER);
 	EnemyHp = new CHp(335,10,CHP_ENEMY);
 	Enemy = new CEnemy;
@@ -11,17 +19,6 @@ CGameHost::CGameHost(HINSTANCE hInstance) {
 	Time = new CTime;
 	Hit = new CHit;
 	GameStatus = STATUS_RELEASE;
-}
-
-CGameHost::~CGameHost() {
-	DeleteObject(BgGround); //DeInit
-	if(Player) delete Player;
-	if(PlayerHp) delete PlayerHp;
-	if(EnemyHp) delete EnemyHp;
-	if(Enemy) delete Enemy;
-	if(Combo) delete Combo;
-	if(Time) delete Time;
-	if(Hit) delete Hit;
 }
 
 void CGameHost::KeyUpdate(WPARAM wParam) {
@@ -83,4 +80,21 @@ void CGameHost::Pause() {
 
 void CGameHost::Release() {
 	GameStatus = STATUS_RELEASE;
+}
+
+CGameHost * CGameHost::newGameHost(HINSTANCE hInstance)
+{
+	if (CGameHost::gameHost != NULL) {
+		DeleteObject(CGameHost::gameHost);
+		CGameHost::gameHost = new CGameHost(hInstance);
+	}
+	return CGameHost::gameHost;
+}
+
+CGameHost* CGameHost::getGameHost(HINSTANCE hInstance)
+{
+	if (CGameHost::gameHost == NULL) {
+		CGameHost::gameHost = new CGameHost(hInstance);
+	}
+	return CGameHost::gameHost;
 }

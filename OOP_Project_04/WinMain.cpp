@@ -93,7 +93,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 				k = MessageBox(hWnd,TEXT("Do you want restart this Game?"),TEXT("Restart"),MB_YESNO);
 				if(k==IDYES) {
 					PlaySound("BGM\\pop_up.wav",NULL,1);
-					GameHost = new CGameHost(g_hInst);
+					GameHost = CGameHost::newGameHost(g_hInst);
 				} else {
 					PlaySound("BGM\\pop_up.wav",NULL,1);
 					GameHost->Release();
@@ -144,7 +144,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 				GameHost->KeyUpdate(VK_RIGHT);
 				InvalidateRect(hWnd,0,0);
 			} else if(GetAsyncKeyState(VK_UP) & 0x8000) {
-				GameHost->KeyUpdate(VK_UP);
+				//GameHost->KeyUpdate(VK_UP);
+				GameHost->controller->doUp();
 				InvalidateRect(hWnd,0,0);
 			} else if(GetAsyncKeyState(VK_DOWN) & 0x8000) {
 				GameHost->KeyUpdate(VK_DOWN);
@@ -172,7 +173,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 				PlaySound("BGM\\die.wav",NULL,1);
 				k = MessageBox(hWnd,TEXT("Lose!! Retry it?"),TEXT("Game Over"),MB_YESNO);
 				if(k==IDYES) {
-					GameHost = new CGameHost(g_hInst);
+					GameHost = CGameHost::newGameHost(g_hInst);
 					PlaySound("BGM\\pop_up.wav",NULL,1);
 				} else {
 					exit(1);
@@ -218,7 +219,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 
 				k = MessageBox(hWnd,Str,TEXT("Game Win"),MB_YESNO);
 				if(k==IDYES) {
-					GameHost = new CGameHost(g_hInst);
+					GameHost = CGameHost::newGameHost(g_hInst);
 					PlaySound("BGM\\pop_up.wav",NULL,1);
 				} else {
 					exit(1);
@@ -229,7 +230,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 			}
 		} if(wParam==2) { //Loading Timer
 			bLoading = FALSE; //Begin Game
-			GameHost = new CGameHost(g_hInst);
+			GameHost = CGameHost::getGameHost(g_hInst);
 			SetTimer(hWnd,1,25,NULL); //Set Host Update Timer
 			InvalidateRect(hWnd,NULL,FALSE);
 			KillTimer(hWnd,2);
