@@ -74,6 +74,14 @@
     </ClInclude>
     <ClInclude Include="CEnemyUpdater.h">
       <Filter>헤더 파일</Filter>
+    <ClInclude Include="PlayerDownCommand.h">
+      <Filter>헤더 파일\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerLeftCommand.h">
+      <Filter>헤더 파일\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerRightCommand.h">
+      <Filter>헤더 파일\Command</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -127,6 +135,14 @@
     </ClCompile>
     <ClCompile Include="CEnemyUpdater.cpp">
       <Filter>소스 파일</Filter>
+    <ClCompile Include="PlayerDownCommand.cpp">
+      <Filter>소스 파일\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerLeftCommand.cpp">
+      <Filter>소스 파일\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerRightCommand.cpp">
+      <Filter>소스 파일\Command</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

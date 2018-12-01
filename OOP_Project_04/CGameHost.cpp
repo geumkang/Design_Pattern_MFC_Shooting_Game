@@ -1,6 +1,9 @@
 #include "CGameHost.h"
 #include "Resource.h"
 #include "PlayerUpCommand.h"
+#include "PlayerDownCommand.h"
+#include "PlayerLeftCommand.h"
+#include "PlayerRightCommand.h"
 
 CGameHost* CGameHost::gameHost;
 
@@ -9,8 +12,14 @@ CGameHost::CGameHost(HINSTANCE hInstance) {
 	Player = new CPlayer(hInstance);
 
 	controller = new Controller();
-	Command* upcommand = new PlayerUpCommand(Player->updater);
-	controller->setUpCommand(upcommand);
+	Command* upCommand = new PlayerUpCommand(Player->updater);
+	controller->setUpCommand(upCommand);
+	Command* downCommand = new PlayerDownCommand(Player->updater);
+	controller->setDownCommand(downCommand);
+	Command* leftCommand = new PlayerLeftCommand(Player->updater);
+	controller->setLeftCommand(leftCommand);
+	Command* rightCommand = new PlayerRightCommand(Player->updater);
+	controller->setRightCommand(rightCommand);
 
 	PlayerHp = new CHp(10,10,CHP_PLAYER);
 	EnemyHp = new CHp(335,10,CHP_ENEMY);

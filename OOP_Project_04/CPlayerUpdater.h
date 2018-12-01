@@ -22,5 +22,8 @@ public:
 	void pushLeft();
 	void pushUp();
 	void pushDown();
+
+	void pushAttack();
+	void pushSpecial();
 };
 

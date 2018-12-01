@@ -138,17 +138,16 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 		if(wParam==1) { //Host Update Timer
 			if(GameHost) {
 			if(GetAsyncKeyState(VK_LEFT) & 0x8000) { //If Pressed Key
-				GameHost->KeyUpdate(VK_LEFT);
+				GameHost->controller->doLeft();
 				InvalidateRect(hWnd,0,0);
 			} else if(GetAsyncKeyState(VK_RIGHT) & 0x8000) {
-				GameHost->KeyUpdate(VK_RIGHT);
+				GameHost->controller->doRight();
 				InvalidateRect(hWnd,0,0);
 			} else if(GetAsyncKeyState(VK_UP) & 0x8000) {
-				//GameHost->KeyUpdate(VK_UP);
 				GameHost->controller->doUp();
 				InvalidateRect(hWnd,0,0);
 			} else if(GetAsyncKeyState(VK_DOWN) & 0x8000) {
-				GameHost->KeyUpdate(VK_DOWN);
+				GameHost->controller->doDown();
 				InvalidateRect(hWnd,0,0);
 			}  
 			// 공격 부분
