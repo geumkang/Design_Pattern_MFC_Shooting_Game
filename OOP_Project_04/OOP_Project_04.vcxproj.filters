@@ -10,12 +10,6 @@
     <ClCompile Include="CEnemy.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="CEnemyRenderer.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="CEnemyUpdater.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="CGameHost.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -29,12 +23,6 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="CPlayer.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="CPlayerRenderer.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="CPlayerUpdater.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="CTime.cpp">
@@ -61,20 +49,36 @@
     <ClCompile Include="Command.cpp">
       <Filter>소스 파일\Command</Filter>
     </ClCompile>
-    <ClCompile Include="CHitRenderer.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="CComboRenderer.cpp">
+      <Filter>소스 파일\Renderer</Filter>
     </ClCompile>
-    <ClCompile Include="CHitUpdater.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="CEnemyRenderer.cpp">
+      <Filter>소스 파일\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayerRenderer.cpp">
+      <Filter>소스 파일\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="CHitRenderer.cpp">
+      <Filter>소스 파일\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="CTimeRenderer.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="CComboUpdater.cpp">
+      <Filter>소스 파일\Updater</Filter>
+    </ClCompile>
+    <ClCompile Include="CEnemyUpdater.cpp">
+      <Filter>소스 파일\Updater</Filter>
+    </ClCompile>
+    <ClCompile Include="CHitUpdater.cpp">
+      <Filter>소스 파일\Updater</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayerUpdater.cpp">
+      <Filter>소스 파일\Updater</Filter>
     </ClCompile>
     <ClCompile Include="CTimeUpdater.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\Updater</Filter>
     </ClCompile>
-    <ClCompile Include="CComboRenderer.cpp" />
-    <ClCompile Include="CComboUpdater.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CBullet.h">
@@ -87,12 +91,6 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="CEnemy_Player.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="CEnemyRenderer.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="CEnemyUpdater.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="CGameHost.h">
@@ -108,12 +106,6 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="CPlayer.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="CPlayerRenderer.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="CPlayerUpdater.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="CTime.h">
@@ -140,20 +132,36 @@
     <ClInclude Include="PlayerUpCommand.h">
       <Filter>헤더 파일\Command</Filter>
     </ClInclude>
-    <ClInclude Include="CHitUpdater.h">
-      <Filter>헤더 파일</Filter>
+    <ClInclude Include="CComboRenderer.h">
+      <Filter>헤더 파일\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="CEnemyRenderer.h">
+      <Filter>헤더 파일\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="CHitRenderer.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>헤더 파일\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlayerRenderer.h">
+      <Filter>헤더 파일\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="CTimeRenderer.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>헤더 파일\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="CComboUpdater.h">
+      <Filter>헤더 파일\Updater</Filter>
+    </ClInclude>
+    <ClInclude Include="CEnemyUpdater.h">
+      <Filter>헤더 파일\Updater</Filter>
+    </ClInclude>
+    <ClInclude Include="CHitUpdater.h">
+      <Filter>헤더 파일\Updater</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlayerUpdater.h">
+      <Filter>헤더 파일\Updater</Filter>
     </ClInclude>
     <ClInclude Include="CTimeUpdater.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>헤더 파일\Updater</Filter>
     </ClInclude>
-    <ClInclude Include="CComboRenderer.h" />
-    <ClInclude Include="CComboUpdater.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Character.bmp">
@@ -181,6 +189,18 @@
     </Filter>
     <Filter Include="헤더 파일\Command">
       <UniqueIdentifier>{312bebcd-85fc-41e2-b108-95b239b76dbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Renderer">
+      <UniqueIdentifier>{8d4defc7-5475-40c7-b670-6f9128e3115d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Updater">
+      <UniqueIdentifier>{4b896cfb-f190-4fa5-a8e5-4963681429c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Renderer">
+      <UniqueIdentifier>{9e25eea2-d98b-46b8-81c2-4338a70807af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Updater">
+      <UniqueIdentifier>{e31a95fd-c519-4f67-bf31-b5fbecc957a0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
