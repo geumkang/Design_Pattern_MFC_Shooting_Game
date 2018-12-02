@@ -1,10 +1,11 @@
 #pragma once
 
 #include <Windows.h>
+#include "CRenderer.h"
 
 class CTransform;
 
-class CEnemyRenderer
+class CEnemyRenderer : public CRenderer
 {
 public:
 	HBRUSH EnemyBrush1;

@@ -1,12 +1,12 @@
 #pragma once
-
+#include "CRenderer.h"
 #include <Windows.h>
 
 #define MAX_TIME_COLOR 4
 
 class CTransform;
 
-class CTimeRenderer
+class CTimeRenderer : public CRenderer
 {
 	int* nTime;
 public:

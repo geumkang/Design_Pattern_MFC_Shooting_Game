@@ -12,7 +12,7 @@ public:
 	CPlayerHpRenderer(CTransform* transform);
 	~CPlayerHpRenderer();
 
-	virtual void render(HDC hdc);
+	virtual void Render(HDC hdc);
 	virtual void setHp(int* hp);
 };
 

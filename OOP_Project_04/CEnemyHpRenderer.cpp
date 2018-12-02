@@ -16,7 +16,7 @@ CEnemyHpRenderer::~CEnemyHpRenderer()
 {
 }
 
-void CEnemyHpRenderer::render(HDC hdc)
+void CEnemyHpRenderer::Render(HDC hdc)
 {
 	HBRUSH OldBrush;
 	HBRUSH OldPen = (HBRUSH)SelectObject(hdc, NullPen);

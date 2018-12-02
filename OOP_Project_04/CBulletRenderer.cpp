@@ -19,6 +19,9 @@ CBulletRenderer::~CBulletRenderer()
 
 void CBulletRenderer::Render(HDC hdc)
 {
+	if (!(*isAlive))
+		return;
+
 	HBRUSH OldBrush;
 	if (bEnemy) OldBrush = (HBRUSH)SelectObject(hdc, hEnemyBrush);
 	else OldBrush = (HBRUSH)SelectObject(hdc, hBrush);
@@ -32,4 +35,9 @@ void CBulletRenderer::Render(HDC hdc)
 void CBulletRenderer::set_bullet_color(int r, int g, int b)
 {
 	hBrush = CreateSolidBrush(RGB(r, g, b));
+}
+
+void CBulletRenderer::setAlive(bool * isAlive)
+{
+	this->isAlive = isAlive;
 }

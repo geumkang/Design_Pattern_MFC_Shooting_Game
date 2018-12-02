@@ -2,6 +2,7 @@
 #include "CTransform.h"
 #include "CBulletRenderer.h"
 #include "CBulletUpdater.h"
+#include "CGameHost.h"
 
 //CBulletBody::CBulletBody(int X, int Y, BOOL bEnemy) {
 //	this->X = X, this->Y = Y;
@@ -48,13 +49,20 @@ CBullet::CBullet(CTransform* player_transform, bool bEnemy) {
 	//Delay = 0;
 	//IsBulletOn = TRUE;
 	this->bEnemy = bEnemy;
-
-	this->transform = new CTransform(player_transform->getX(), player_transform->getY());
+	
+	this->transform = new CTransform(player_transform->getX()+player_transform->getSize()/2, player_transform->getY());
 	this->renderer = new CBulletRenderer(this->transform);
+	((CBulletRenderer*)this->renderer)->setAlive(&isAlive);
 	this->updater = new CBulletUpdater(this->transform);
 	if (bEnemy) {
-		this->updater->reverse_direction();
+		((CBulletUpdater*)this->updater)->reverse_direction();
+		((CBulletRenderer*)this->renderer)->set_bullet_color(255,0,0);
 	}
+
+	//update static vectors in CGameHost
+	CGameHost::renderers.push_back(renderer);
+	CGameHost::updaters.push_back(updater);
+	CGameHost::bullets.push_back(this);
 }
 
 CBullet::~CBullet() {
@@ -117,7 +125,7 @@ void CBullet::Update() {
 //	}
 //	if(!Body.size()) IsBulletOn=FALSE;
 //	else IsBulletOn=TRUE;
-	this->updater->update();
+	this->updater->Update();
 }
 
 void CBullet::Render(HDC hdc) {

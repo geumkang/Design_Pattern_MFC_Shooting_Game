@@ -2,7 +2,7 @@
 #include "CPlayerUpdater.h"
 
 
-PlayerRightCommand::PlayerRightCommand(CPlayerUpdater* updater)
+PlayerRightCommand::PlayerRightCommand(CUpdater* updater)
 {
 	this->updater = updater;
 }
@@ -13,5 +13,5 @@ PlayerRightCommand::~PlayerRightCommand()
 }
 
 void PlayerRightCommand::execute() {
-	updater->pushRight();
+	((CPlayerUpdater*)updater)->pushRight();
 }

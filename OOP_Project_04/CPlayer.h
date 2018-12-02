@@ -9,8 +9,8 @@
 /*KCH*/
 #include "CGameObject.h"
 #include "CTransform.h"
-#include "CPlayerRenderer.h"
-#include "CPlayerUpdater.h"
+#include "CRenderer.h"
+#include "CUpdater.h"
 
 using namespace std;
 #define MAX_SPEED 5
@@ -41,8 +41,8 @@ class CPlayer : public CGameObject{
 public:
 	/*KCH*/
 	CTransform* transform;
-	CPlayerRenderer* renderer;
-	CPlayerUpdater* updater;
+	CRenderer* renderer;
+	CUpdater* updater;
 
 	CPlayer(HINSTANCE);
 	virtual ~CPlayer();

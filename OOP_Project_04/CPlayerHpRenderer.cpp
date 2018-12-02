@@ -16,7 +16,7 @@ CPlayerHpRenderer::~CPlayerHpRenderer()
 {
 }
 
-void CPlayerHpRenderer::render(HDC hdc)
+void CPlayerHpRenderer::Render(HDC hdc)
 {
 	HBRUSH OldBrush;
 	HBRUSH OldPen = (HBRUSH)SelectObject(hdc, NullPen);

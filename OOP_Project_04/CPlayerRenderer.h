@@ -1,10 +1,11 @@
 #pragma once
 
 #include <Windows.h>
+#include "CRenderer.h"
 
 class CTransform;
 
-class CPlayerRenderer
+class CPlayerRenderer : public CRenderer
 {
 public:
 	CTransform *transform;

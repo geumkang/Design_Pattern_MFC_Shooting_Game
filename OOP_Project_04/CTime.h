@@ -3,9 +3,10 @@
 
 #include <windows.h>
 #include "CGameObject.h"
-#include "CTransform.h"
-#include "CHitRenderer.h"
-#include "CHitUpdater.h"
+
+class CTransform;
+class CRenderer;
+class CUpdater;
 
 class CTime : public CGameObject{
 	int nTime;
@@ -13,8 +14,8 @@ class CTime : public CGameObject{
 public:
 
 	CTransform* transform;
-	CHitRenderer* renderer;
-	CHitUpdater* updater;
+	CRenderer* renderer;
+	CUpdater* updater;
 
 	CTime();
 	virtual ~CTime();
@@ -22,9 +23,9 @@ public:
 	void Update();
 	void Render(HDC);
 
-	void InitTime();
+	/*void InitTime();
 	void IncTime();
-	int GetTime();
+	int GetTime();*/
 };
 
 #endif

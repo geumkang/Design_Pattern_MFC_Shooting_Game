@@ -15,8 +15,8 @@
 #define NON_UPGRADE 1
 
 //class CBulletMaker;
-class CEnemyRenderer;
-class CEnemyUpdater;
+class CRenderer;
+class CUpdater;
 class CTransform;
 
 class CEnemy : public CGameObject {
@@ -30,8 +30,8 @@ class CEnemy : public CGameObject {
 public:
 
 	CTransform *transform;
-	CEnemyRenderer* renderer;
-	CEnemyUpdater* updater;
+	CRenderer* renderer;
+	CUpdater* updater;
 
 	CEnemy();
 	virtual ~CEnemy();

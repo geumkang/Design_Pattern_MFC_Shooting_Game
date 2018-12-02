@@ -10,9 +10,9 @@
 #define CHP_ENEMY  2
 
 class CTransform;
-class CHpRenderer;
+class CRenderer;
 
-class CHp {
+class CHp : public CGameObject{
 	const int MaxHp;
 	const int User;
 	int Hp;
@@ -22,7 +22,7 @@ class CHp {
 	HBRUSH BlankBrush;
 	HPEN NullPen;*/
 	CTransform* transform;
-	CHpRenderer* renderer;
+	CRenderer* renderer;
 
 public:
 	CHp(int,int,int);

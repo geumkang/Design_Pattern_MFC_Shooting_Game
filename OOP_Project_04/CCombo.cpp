@@ -1,11 +1,18 @@
 #include "CCombo.h"
+#include "CComboRenderer.h"
+#include "CComboUpdater.h"
+#include "CGameHost.h"
 
 CCombo::CCombo() {
 
 	this->transform = new CTransform(430, 420);
-	this->renderer = new CHitRenderer(this->transform);
-	this->updater = new CHitUpdater(transform);
-	this->renderer->setHit(&nCombo);
+	this->renderer = new CComboRenderer(this->transform);
+	this->updater = new CComboUpdater(transform);
+	((CComboRenderer*)this->renderer)->setCombo(&nCombo);
+	((CComboUpdater*)this->updater)->setCombo(&nCombo);
+	//update static vectors in CGameHost
+	CGameHost::renderers.push_back(renderer);
+	CGameHost::updaters.push_back(updater);
 
 	nCombo = 0;
 }
@@ -19,16 +26,4 @@ void CCombo::Update() {
 
 void CCombo::Render(HDC hdc) {
 	this->renderer->Render(hdc);
-}
-
-void CCombo::InitCombo() {
-	nCombo = 0;
-}
-
-void CCombo::IncCombo() {
-	nCombo++;
-}
-
-int CCombo::GetCombo() {
-	return nCombo;
 }

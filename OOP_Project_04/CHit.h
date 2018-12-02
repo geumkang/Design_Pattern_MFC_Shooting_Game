@@ -4,9 +4,10 @@
 #include <windows.h>
 
 #include "CGameObject.h"
-#include "CTransform.h"
-#include "CHitRenderer.h"
-#include "CHitUpdater.h"
+
+class CTransform;
+class CRenderer;
+class CUpdater;
 
 class CHit : public CGameObject{
 	int nHit;
@@ -16,8 +17,8 @@ class CHit : public CGameObject{
 public:
 
 	CTransform* transform;
-	CHitRenderer* renderer;
-	CHitUpdater* updater;
+	CRenderer* renderer;
+	CUpdater* updater;
 
 	CHit();
 	virtual ~CHit();

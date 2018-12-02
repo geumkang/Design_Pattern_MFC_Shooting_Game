@@ -1,15 +1,18 @@
 #pragma once
 #include <Windows.h>
+#include "CRenderer.h"
 
 #define BULLET_WIDTH 5
 #define BULLET_HEIGHT 10
 
 class CTransform;
 
-class CBulletRenderer
+class CBulletRenderer : public CRenderer
 {
 public:
 	
+	bool* isAlive;
+
 	CTransform* transform;
 
 	HBRUSH hBrush;
@@ -23,5 +26,6 @@ public:
 
 	void Render(HDC hdc);
 	void set_bullet_color(int r, int g, int b);
+	void setAlive(bool* isAlive);
 };
 

@@ -1,10 +1,10 @@
 #pragma once
-
+#include "CUpdater.h"
 #define BULLET_SPEED 6
 
 class CTransform;
 
-class CBulletUpdater
+class CBulletUpdater : public CUpdater
 {
 
 	bool isEnemy = false;
@@ -16,8 +16,9 @@ public:
 	CBulletUpdater(CTransform* transform);
 	~CBulletUpdater();
 
-	void update();
+	void Update();
 	void reverse_direction();
+	bool getIsEnemy();
 };
 
 

@@ -1,13 +1,13 @@
 #pragma once
 #include "Command.h"
 
-class CPlayerUpdater;
+class CUpdater;
 
 class PlayerRightCommand : public Command
 {
-	CPlayerUpdater* updater;
+	CUpdater* updater;
 public:
-	PlayerRightCommand(CPlayerUpdater* updater);
+	PlayerRightCommand(CUpdater* updater);
 	~PlayerRightCommand();
 
 	virtual void execute();

@@ -10,3 +10,7 @@ CHitUpdater::CHitUpdater(CTransform* transform)
 CHitUpdater::~CHitUpdater()
 {
 }
+
+void CHitUpdater::Update()
+{
+}

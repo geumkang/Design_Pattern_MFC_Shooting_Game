@@ -1,12 +1,13 @@
 #pragma once
 
+#include "CRenderer.h"
 #include <Windows.h>
 
 #define MAX_Hit_COLOR 4
 
 class CTransform;
 
-class CHitRenderer
+class CHitRenderer : public CRenderer
 {
 	int* nHit;
 public:

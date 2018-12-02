@@ -1,10 +1,11 @@
 #include "CEnemyUpdater.h"
 #include "CTransform.h"
-
+#include "CBullet.h"
 
 CEnemyUpdater::CEnemyUpdater(CTransform* transform)
 {
 	this->transform = transform;
+	delay = 0;
 	PreKey = 0;
 	AlphaSpeed = 0;
 }
@@ -14,6 +15,14 @@ CEnemyUpdater::~CEnemyUpdater()
 {
 }
 
+void CEnemyUpdater::move(bool isLeft)
+{
+	if (isLeft)
+		moveLeft();
+	else
+		moveRight();
+}
+
 void CEnemyUpdater::moveRight()
 {
 	if (PreKey != RIGHT) AlphaSpeed = 0; //Check Last Key
@@ -21,6 +30,7 @@ void CEnemyUpdater::moveRight()
 		transform->setX(transform->getX() + (AlphaSpeed + 1));
 	if (AlphaSpeed < MAX_SPEED) AlphaSpeed++;
 	PreKey = RIGHT;
+	//transform->setX(transform->getX() + 3);
 }
 
 void CEnemyUpdater::moveLeft()
@@ -30,4 +40,14 @@ void CEnemyUpdater::moveLeft()
 		transform->setX(transform->getX() - (AlphaSpeed + 1));
 	if (AlphaSpeed < MAX_ENEMY_SPEED) AlphaSpeed++;
 	PreKey = LEFT;
+	//transform->setX(transform->getX() - 1);
+}
+
+void CEnemyUpdater::Update()
+{
+	if (delay > 5) {
+		CBullet* bullet = new CBullet(transform, true);
+		delay = 0;
+	}
+	delay++;
 }

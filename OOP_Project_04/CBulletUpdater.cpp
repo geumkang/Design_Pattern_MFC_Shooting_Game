@@ -12,7 +12,7 @@ CBulletUpdater::~CBulletUpdater()
 {
 }
 
-void CBulletUpdater::update()
+void CBulletUpdater::Update()
 {
 	if (isEnemy) {
 		this->transform->setY( this->transform->getY() + BULLET_SPEED);
@@ -25,4 +25,9 @@ void CBulletUpdater::update()
 void CBulletUpdater::reverse_direction() 
 {
 	isEnemy = !isEnemy;
+}
+
+bool CBulletUpdater::getIsEnemy()
+{
+	return isEnemy;
 }

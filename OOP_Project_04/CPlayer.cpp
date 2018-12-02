@@ -1,6 +1,9 @@
 #include "CPlayer.h"
 #include "Resource.h"
 #include "CBulletMaker.h"
+#include "CGameHost.h"
+#include "CPlayerRenderer.h"
+#include "CPlayerUpdater.h"
 
 #pragma comment(lib,"msimg32.lib")
 
@@ -12,8 +15,13 @@ CPlayer::CPlayer(HINSTANCE hInstance) {
 	this->transform = new CTransform(300, 400);
 	this->transform->setSize(23);
 	this->renderer = new CPlayerRenderer(this->transform);
-	this->renderer->setBitmap(hPlayerBit);
+	((CPlayerRenderer*)renderer)->setBitmap(hPlayerBit);
 	this->updater = new CPlayerUpdater(transform);
+	
+
+	//update static vectors in CGameHost
+	CGameHost::renderers.push_back(renderer);
+	CGameHost::updaters.push_back(updater);
 
 	AlphaSpeed = 0, PreKey = 0;
 	//Bullet = new CBulletMaker(FALSE);
@@ -91,9 +99,9 @@ void CPlayer::Special_Attack(CCombo* Combo) {
 	if(special_count > 0)
 		while(true)
 		{
-			Combo->IncCombo();
+			/*Combo->IncCombo();
 			if(Combo->GetCombo() > 10)
-				break;
+				break;*/
 		}
 	special_count--;
 }
@@ -105,10 +113,10 @@ int CPlayer::Update(CEnemy *Enemy, CHp *Hp, CCombo *Combo) {
 		Hp->MovHp(-3);
 	}
 
-	if(Combo->GetCombo() > 10) {
+	/*if(Combo->GetCombo() > 10) {
 		BulletMode = UPGRADE;
 		return 1;
-	}
+	}*/
 	BulletMode = NON_UPGRADE;
 	return 0;
 }

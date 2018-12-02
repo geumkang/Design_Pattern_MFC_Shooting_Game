@@ -3,6 +3,7 @@
 #include "CHpRenderer.h"
 #include "CPlayerHpRenderer.h"
 #include "CEnemyHpRenderer.h"
+#include "CGameHost.h"
 
 CHp::CHp(int X, int Y, int _User) : User(_User), MaxHp(300) {
 	Hp = MaxHp;
@@ -10,11 +11,14 @@ CHp::CHp(int X, int Y, int _User) : User(_User), MaxHp(300) {
 	this->transform = new CTransform(X, Y);
 	if (User == CHP_PLAYER) {
 		this->renderer = new CPlayerHpRenderer(transform);
-		renderer->setHp(&Hp);
+		((CPlayerHpRenderer*)renderer)->setHp(&Hp);
 	} else if (User == CHP_ENEMY) {
 		this->renderer = new CEnemyHpRenderer(transform);
-		renderer->setHp(&Hp);
+		((CEnemyHpRenderer*)renderer)->setHp(&Hp);
 	}
+
+	//update static vectors in CGameHost
+	CGameHost::renderers.push_back(renderer);
 /*
 	NormalBrush = CreateSolidBrush(RGB(255,0,0));
 	DangerBrush = CreateSolidBrush(RGB(180,225,45));
@@ -54,7 +58,7 @@ void CHp::Update() {
 }
 
 void CHp::Render(HDC hdc) {
-	this->renderer->render(hdc);
+	this->renderer->Render(hdc);
 	/*HBRUSH OldBrush;
 	HBRUSH OldPen = (HBRUSH)SelectObject(hdc,NullPen);
 	int status = (int)((double)Hp/(double)MaxHp*250);

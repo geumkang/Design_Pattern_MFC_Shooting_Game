@@ -10,7 +10,7 @@ public:
 	CEnemyHpRenderer(CTransform* transform);
 	~CEnemyHpRenderer();
 
-	virtual void render(HDC hdc);
+	virtual void Render(HDC hdc);
 	virtual void setHp(int* hp);
 };
 

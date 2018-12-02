@@ -1,5 +1,7 @@
 #pragma once
 
+#include "CUpdater.h"
+
 #define MAX_SPEED 5
 #define LEFT 1
 #define RIGHT 2
@@ -9,9 +11,10 @@
 
 class CTransform;
 
-class CPlayerUpdater
+class CPlayerUpdater : public CUpdater
 {
 	CTransform* transform;
+	int delay;
 	int PreKey;
 	int AlphaSpeed;
 public:
@@ -25,5 +28,7 @@ public:
 
 	void pushAttack();
 	void pushSpecial();
+
+	void Update();
 };
 

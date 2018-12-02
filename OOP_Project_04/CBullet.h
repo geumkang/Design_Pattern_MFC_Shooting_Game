@@ -11,8 +11,8 @@ using namespace std;
 #define BULLET_WIDTH 5
 #define BULLET_HEIGHT 10
 
-class CBulletRenderer;
-class CBulletUpdater;
+class CRenderer;
+class CUpdater;
 class CTransform;
 
 //class CBulletBody {
@@ -44,8 +44,10 @@ class CBullet : public CGameObject {
 	//void DrawBody(HDC);
 public:
 
-	CBulletRenderer* renderer;
-	CBulletUpdater* updater;
+	bool isAlive = true;
+
+	CRenderer* renderer;
+	CUpdater* updater;
 	CTransform* transform;
 
 	CBullet(CTransform* player_transform, bool);

@@ -1,8 +1,9 @@
 #include "PlayerUpCommand.h"
+#include "CUpdater.h"
 #include "CPlayerUpdater.h"
 
 
-PlayerUpCommand::PlayerUpCommand(CPlayerUpdater* updater)
+PlayerUpCommand::PlayerUpCommand(CUpdater* updater)
 {
 	this->updater = updater;
 }
@@ -14,5 +15,5 @@ PlayerUpCommand::~PlayerUpCommand()
 
 void PlayerUpCommand::execute()
 {
-	updater->pushUp();
+	((CPlayerUpdater*)updater)->pushUp();
 }

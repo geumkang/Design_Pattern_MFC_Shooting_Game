@@ -155,7 +155,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 				if(attack_count==0)
 					PlaySound("BGM\\attack.wav",NULL,1);
 				attack_count++;
-				GameHost->KeyUpdate('Z');
+				GameHost->controller->doAttack();
+				//GameHost->KeyUpdate('Z');
 				InvalidateRect(hWnd,0,0);
 				if(attack_count==4)
 					attack_count=0;

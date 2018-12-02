@@ -7,8 +7,17 @@
 #include "CEnemy.h"
 #include "CTime.h"
 #include "Controller.h"
+
+#define ENEMY_SIZE 25
+#define UPGRADE 0
+#define NON_UPGRADE 1
+
 #define STATUS_PAUSE 1
 #define STATUS_RELEASE 0
+
+class CRenderer;
+class CUpdater;
+class CBullet;
 
 class CGameHost {
 
@@ -23,9 +32,14 @@ class CGameHost {
 	CTime *Time;
 	CHit *Hit;
 
+	int Delay = 0;
+
 	BOOL GameStatus;
 public:
 	Controller* controller;
+	static vector<CRenderer*> renderers;
+	static vector<CUpdater*> updaters;
+	static vector<CBullet*> bullets;
 
 	//CGameHost(HINSTANCE);
 	~CGameHost() {
@@ -49,6 +63,8 @@ public:
 
 	void Pause();
 	void Release();
+
+	void run();
 
 	static CGameHost* getGameHost(HINSTANCE hInstance);
 	static CGameHost* newGameHost(HINSTANCE hInstance);

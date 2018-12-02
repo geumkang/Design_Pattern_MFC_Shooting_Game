@@ -1,9 +1,11 @@
 #include "CPlayerUpdater.h"
 #include "CTransform.h"
+#include "CBullet.h"
 
 CPlayerUpdater::CPlayerUpdater(CTransform * transform)
 {
 	this->transform = transform;
+	delay = 0;
 	PreKey = 0;
 	AlphaSpeed = 0;
 }
@@ -62,8 +64,17 @@ void CPlayerUpdater::pushDown()
 
 void CPlayerUpdater::pushAttack()
 {
+	if (delay > 5) {
+		CBullet* bullet = new CBullet(this->transform, false);
+		delay = 0;
+	}
+	delay++;
 }
 
 void CPlayerUpdater::pushSpecial()
+{
+}
+
+void CPlayerUpdater::Update()
 {
 }

@@ -1,11 +1,18 @@
 #include "CHit.h"
+#include "CGameHost.h"
+#include "CHitRenderer.h"
+#include "CHitUpdater.h"
 
 CHit::CHit() {
 
 	this->transform = new CTransform(430, 370);
 	this->renderer = new CHitRenderer(this->transform);
 	this->updater = new CHitUpdater(transform);
-	this->renderer->setHit(&nHit);
+	((CHitRenderer*)this->renderer)->setHit(&nHit);
+
+	//update static vectors in CGameHost
+	CGameHost::renderers.push_back(renderer);
+	CGameHost::updaters.push_back(updater);
 
 	nHit = 0;
 	/*int color = 0;

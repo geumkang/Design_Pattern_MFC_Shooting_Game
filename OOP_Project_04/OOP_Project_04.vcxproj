@@ -42,6 +42,7 @@
     <ClInclude Include="CTimeUpdater.h" />
     <ClInclude Include="CTransform.h" />
     <ClInclude Include="CUpdater.h" />
+    <ClInclude Include="PlayerAttackCommand.h" />
     <ClInclude Include="PlayerDownCommand.h" />
     <ClInclude Include="PlayerLeftCommand.h" />
     <ClInclude Include="PlayerRightCommand.h" />
@@ -78,6 +79,7 @@
     <ClCompile Include="CTimeUpdater.cpp" />
     <ClCompile Include="CTransform.cpp" />
     <ClCompile Include="CUpdater.cpp" />
+    <ClCompile Include="PlayerAttackCommand.cpp" />
     <ClCompile Include="PlayerDownCommand.cpp" />
     <ClCompile Include="PlayerLeftCommand.cpp" />
     <ClCompile Include="PlayerRightCommand.cpp" />

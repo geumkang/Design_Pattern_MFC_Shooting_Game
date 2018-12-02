@@ -13,6 +13,7 @@ Controller::~Controller()
 
 void Controller::doAttack()
 {
+	attackCommand->execute();
 }
 
 void Controller::doSpecial()
