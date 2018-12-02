@@ -18,7 +18,7 @@ public:
 
 	CTimeRenderer(CTransform *transform);
 	~CTimeRenderer();
-	void render(HDC);
+	void Render(HDC);
 	void setTime(int*);
 };
 

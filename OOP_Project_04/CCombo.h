@@ -2,12 +2,12 @@
 #define _CCOMBO_H_
 
 #include <windows.h>
-
+#include "CGameObject.h"
 #include "CTransform.h"
 #include "CHitRenderer.h"
 #include "CHitUpdater.h"
 
-class CCombo {
+class CCombo : public CGameObject {
 	int nCombo;
 
 public:

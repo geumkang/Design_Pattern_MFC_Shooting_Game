@@ -97,7 +97,7 @@ AFTER_MOVE_CAL:
 }
 
 void CEnemy::Render(HDC hdc) {
-	this->renderer->render(hdc);
+	this->renderer->Render(hdc);
 
 	Bullet->Render(hdc);
 }

@@ -114,7 +114,7 @@ int CPlayer::Update(CEnemy *Enemy, CHp *Hp, CCombo *Combo) {
 
 void CPlayer::Render(HDC hdc) {
 
-	this->renderer->render(hdc);
+	this->renderer->Render(hdc);
 	Bullet->Render(hdc);
 }
 

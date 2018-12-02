@@ -19,7 +19,7 @@ CComboRenderer::~CComboRenderer()
 	DeleteObject(hComboFont);
 }
 
-void CComboRenderer::render(HDC hdc)
+void CComboRenderer::Render(HDC hdc)
 {
 	TCHAR szComboString[32];
 

@@ -7,7 +7,6 @@
 #include "CEnemy.h"
 #include "CTime.h"
 #include "Controller.h"
-
 #define STATUS_PAUSE 1
 #define STATUS_RELEASE 0
 

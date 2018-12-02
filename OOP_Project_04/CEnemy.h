@@ -6,6 +6,7 @@
 #include "CEnemy_Player.h"
 #include "CCombo.h"
 #include "CHit.h"
+#include "CGameObject.h"
 
 #define ENEMY_SIZE 25
 #define LEFT 1
@@ -18,7 +19,7 @@ class CEnemyRenderer;
 class CEnemyUpdater;
 class CTransform;
 
-class CEnemy {
+class CEnemy : public CGameObject {
 	int MoveMode;
 	int Delay;
 
@@ -33,7 +34,7 @@ public:
 	CEnemyUpdater* updater;
 
 	CEnemy();
-	~CEnemy();
+	virtual ~CEnemy();
 
 	BOOL CheckHit(int,int,int);
 

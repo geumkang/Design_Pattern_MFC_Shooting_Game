@@ -2,12 +2,12 @@
 #define _CTime_H_
 
 #include <windows.h>
-
+#include "CGameObject.h"
 #include "CTransform.h"
 #include "CHitRenderer.h"
 #include "CHitUpdater.h"
 
-class CTime {
+class CTime : public CGameObject{
 	int nTime;
 
 public:
@@ -17,7 +17,7 @@ public:
 	CHitUpdater* updater;
 
 	CTime();
-	~CTime();
+	virtual ~CTime();
 
 	void Update();
 	void Render(HDC);
