@@ -7,10 +7,10 @@
 #include "CEnemy_Player.h"
 #include "CCombo.h"
 /*KCH*/
+#include "CGameObject.h"
 #include "CTransform.h"
 #include "CPlayerRenderer.h"
 #include "CPlayerUpdater.h"
-
 
 using namespace std;
 #define MAX_SPEED 5
@@ -18,16 +18,16 @@ using namespace std;
 #define UPGRADE 0
 #define NON_UPGRADE 1
 
-class CBulletMaker;
+//class CBulletMaker;
 
-class CPlayer {
+class CPlayer : public CGameObject{
 	HBITMAP hPlayerBit;
 
 	int AlphaSpeed;
 	int PreKey;
 	vector<CPlayerBody*> Body;
-	CBulletMaker *Bullet;
-	BOOL BulletMode;
+	//CBulletMaker *Bullet;
+	bool BulletMode;
 
 	void DrawPlayerBody(HDC);
 	//void DrawPlayer(HDC);
@@ -40,12 +40,12 @@ class CPlayer {
 	void Special_Attack(CCombo*);
 public:
 	/*KCH*/
-	CTransform *transform;
+	CTransform* transform;
 	CPlayerRenderer* renderer;
 	CPlayerUpdater* updater;
 
 	CPlayer(HINSTANCE);
-	~CPlayer();
+	virtual ~CPlayer();
 
 	void KeyUpdate(SHORT,CCombo*);
 	int Update(CEnemy*, CHp*, CCombo*);
@@ -53,6 +53,7 @@ public:
 
 	BOOL CheckHit(int,int,int);
 	BOOL IsBullet();
+	void setIsBullet(bool IsBullet);
 
 	int GetX() { return this->transform->getX();}
 	int GetY() { return this->transform->getY();}

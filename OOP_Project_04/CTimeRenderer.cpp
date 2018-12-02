@@ -19,7 +19,7 @@ CTimeRenderer::~CTimeRenderer()
 	DeleteObject(hTimeFont);
 }
 
-void CTimeRenderer::render(HDC hdc)
+void CTimeRenderer::Render(HDC hdc)
 {
 	TCHAR szTimeString[32];
 

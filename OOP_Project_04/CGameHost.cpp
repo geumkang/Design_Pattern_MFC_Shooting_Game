@@ -7,6 +7,7 @@
 
 CGameHost* CGameHost::gameHost;
 
+
 CGameHost::CGameHost(HINSTANCE hInstance) {
 	BgGround = LoadBitmap(hInstance,MAKEINTRESOURCE(IDB_MAP)); //Init
 	Player = new CPlayer(hInstance);
@@ -50,6 +51,10 @@ int CGameHost::Update() {
 }
 
 void CGameHost::Render(HDC hdc) {
+
+	/*
+	renderers->renderall();
+	*/
 	HBITMAP hBit = CreateCompatibleBitmap(hdc,600,500);
 	HDC hMemDC = CreateCompatibleDC(hdc);
 	HBITMAP OldBit = (HBITMAP)SelectObject(hMemDC,hBit);
@@ -91,7 +96,7 @@ void CGameHost::Release() {
 	GameStatus = STATUS_RELEASE;
 }
 
-CGameHost * CGameHost::newGameHost(HINSTANCE hInstance)
+CGameHost* CGameHost::newGameHost(HINSTANCE hInstance)
 {
 	if (CGameHost::gameHost != NULL) {
 		DeleteObject(CGameHost::gameHost);

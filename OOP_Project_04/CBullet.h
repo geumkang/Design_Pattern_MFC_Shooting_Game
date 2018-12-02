@@ -4,6 +4,7 @@
 #include <windows.h>
 #include <vector>
 #include <iostream>
+#include "CGameObject.h"
 using namespace std;
 
 #define BULLET_SPEED 6
@@ -34,7 +35,7 @@ class CTransform;
 //	void Render(HDC);
 //};
 
-class CBullet {
+class CBullet : public CGameObject {
 	//vector<CBullet*> Body;
 	/*int Delay;
 	BOOL IsBulletOn;*/
@@ -48,7 +49,7 @@ public:
 	CTransform* transform;
 
 	CBullet(CTransform* player_transform, bool);
-	~CBullet();
+	virtual ~CBullet();
 
 	//void PushBody(int PosX, int PosY, int Combo);
 	//void PopBody();

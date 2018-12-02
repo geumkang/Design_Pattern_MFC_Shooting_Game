@@ -16,13 +16,13 @@ CPlayer::CPlayer(HINSTANCE hInstance) {
 	this->updater = new CPlayerUpdater(transform);
 
 	AlphaSpeed = 0, PreKey = 0;
-	Bullet = new CBulletMaker(FALSE);
+	//Bullet = new CBulletMaker(FALSE);
 	BulletMode = NON_UPGRADE;
 }
 
 CPlayer::~CPlayer() {
 	DeleteObject(hPlayerBit);
-	delete Bullet;
+	//delete Bullet;
 }
 
 //void CPlayer::DrawPlayer(HDC hdc) {
@@ -82,10 +82,11 @@ void CPlayer::PopBody() {
 }
 
 void CPlayer::Attack(CCombo* Combo) {
-	Bullet->PushBody(new CTransform(GetX() + GetSize() / 2 - 1, GetY()), Combo->GetCombo());
+	this->BulletMode = true;
+	//Bullet->PushBody(new CTransform(GetX() + GetSize() / 2 - 1, GetY()), Combo->GetCombo());
 }
 
-// ÇÊ»ì±â ´É·Â ¼³Á¤
+// ï¿½Ê»ï¿½ï¿½ï¿½ ï¿½É·ï¿½ ï¿½ï¿½ï¿½ï¿½
 void CPlayer::Special_Attack(CCombo* Combo) {
 	if(special_count > 0)
 		while(true)
@@ -99,7 +100,7 @@ void CPlayer::Special_Attack(CCombo* Combo) {
 
 int CPlayer::Update(CEnemy *Enemy, CHp *Hp, CCombo *Combo) {
 	PopBody();
-	Bullet->Update();
+	//Bullet->Update();
 	if((Enemy->CheckHit(GetX(),GetY(),ENEMY_SIZE))) {
 		Hp->MovHp(-3);
 	}
@@ -114,17 +115,23 @@ int CPlayer::Update(CEnemy *Enemy, CHp *Hp, CCombo *Combo) {
 
 void CPlayer::Render(HDC hdc) {
 
-	this->renderer->render(hdc);
-	Bullet->Render(hdc);
+	this->renderer->Render(hdc);
+	//Bullet->Render(hdc);
 }
 
 BOOL CPlayer::CheckHit(int _X, int _Y, int _Size) {
-	return (Bullet->CheckHit(new CTransform(_X, _Y), _Size));
+	//return (Bullet->CheckHit(new CTransform(_X, _Y), _Size));
+	return false;
 }
 
 BOOL CPlayer::IsBullet() {
-	return (Bullet->GetBulletMode());
+	//return (Bullet->GetBulletMode());
+	return this->BulletMode;
+}
 
+void CPlayer::setIsBullet(bool IsBullet)
+{
+	this->BulletMode = IsBullet;
 }
 
 CPlayerBody::CPlayerBody(int PosX, int PosY) {

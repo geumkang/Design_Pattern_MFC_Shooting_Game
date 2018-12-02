@@ -14,7 +14,7 @@ public:
 	CPlayerRenderer(CTransform* transform);
 	~CPlayerRenderer();
 
-	void render(HDC);
+	void Render(HDC);
 	void setBitmap(HBITMAP hplayerBit);
 };
 

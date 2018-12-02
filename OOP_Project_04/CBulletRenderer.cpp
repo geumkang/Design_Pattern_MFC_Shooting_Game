@@ -17,7 +17,7 @@ CBulletRenderer::~CBulletRenderer()
 	DeleteObject(hPen);
 }
 
-void CBulletRenderer::render(HDC hdc)
+void CBulletRenderer::Render(HDC hdc)
 {
 	HBRUSH OldBrush;
 	if (bEnemy) OldBrush = (HBRUSH)SelectObject(hdc, hEnemyBrush);

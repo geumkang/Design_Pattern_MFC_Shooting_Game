@@ -21,7 +21,7 @@ public:
 	CBulletRenderer(CTransform* transform);
 	~CBulletRenderer();
 
-	void render(HDC hdc);
+	void Render(HDC hdc);
 	void set_bullet_color(int r, int g, int b);
 };
 

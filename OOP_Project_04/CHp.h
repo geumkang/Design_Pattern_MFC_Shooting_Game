@@ -2,7 +2,7 @@
 #define _CHP_H_
 
 #include <windows.h>
-
+#include "CGameObject.h"
 #define CHP_NORMAL 1
 #define CHP_DANGER 2
 
@@ -26,7 +26,7 @@ class CHp {
 
 public:
 	CHp(int,int,int);
-	~CHp();
+	virtual ~CHp();
 
 	int GetMaxHp();
 	int GetHp();

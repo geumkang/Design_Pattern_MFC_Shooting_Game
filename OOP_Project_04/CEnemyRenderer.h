@@ -15,6 +15,6 @@ public:
 
 	CEnemyRenderer(CTransform *transform);
 	~CEnemyRenderer();
-	void render(HDC);
+	void Render(HDC);
 };
 

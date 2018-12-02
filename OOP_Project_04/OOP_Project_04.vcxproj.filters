@@ -88,12 +88,18 @@
     <ClCompile Include="CBulletUpdater.cpp">
       <Filter>소스 파일\Updater</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="CEnemyHpRenderer.cpp">
       <Filter>소스 파일\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="CPlayerHpRenderer.cpp">
       <Filter>소스 파일\Renderer</Filter>
     </ClCompile>
+=======
+    <ClCompile Include="CGameObject.cpp" />
+    <ClCompile Include="CRenderer.cpp" />
+    <ClCompile Include="CUpdater.cpp" />
+>>>>>>> 73cf733a87a94a54d1bc377386eaa36aa6001415
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CBullet.h">
@@ -186,6 +192,7 @@
     <ClInclude Include="CBulletMaker.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="CHpRenderer.h">
       <Filter>헤더 파일\Renderer</Filter>
     </ClInclude>
@@ -195,6 +202,11 @@
     <ClInclude Include="CPlayerHpRenderer.h">
       <Filter>헤더 파일\Renderer</Filter>
     </ClInclude>
+=======
+    <ClInclude Include="CGameObject.h" />
+    <ClInclude Include="CRenderer.h" />
+    <ClInclude Include="CUpdater.h" />
+>>>>>>> 73cf733a87a94a54d1bc377386eaa36aa6001415
   </ItemGroup>
   <ItemGroup>
     <Image Include="Character.bmp">

@@ -18,7 +18,7 @@ CEnemyRenderer::~CEnemyRenderer()
 	DeleteObject(EnemyPen);
 }
 
-void CEnemyRenderer::render(HDC hdc)
+void CEnemyRenderer::Render(HDC hdc)
 {
 	HBRUSH OldBrush = (HBRUSH)SelectObject(hdc, EnemyBrush1);
 	HPEN OldPen = (HPEN)SelectObject(hdc, EnemyPen);

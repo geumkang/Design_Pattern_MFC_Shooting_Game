@@ -6,6 +6,7 @@
 #include "CEnemy_Player.h"
 #include "CCombo.h"
 #include "CHit.h"
+#include "CGameObject.h"
 
 #define ENEMY_SIZE 25
 #define LEFT 1
@@ -13,19 +14,19 @@
 #define UPGRADE 0
 #define NON_UPGRADE 1
 
-class CBulletMaker;
+//class CBulletMaker;
 class CEnemyRenderer;
 class CEnemyUpdater;
 class CTransform;
 
-class CEnemy {
+class CEnemy : public CGameObject {
 	int MoveMode;
 	int Delay;
 
 	int ComboDelay;
 	BOOL BulletMode;
 
-	CBulletMaker *Bullet;
+	//CBulletMaker *Bullet;
 public:
 
 	CTransform *transform;
@@ -33,7 +34,7 @@ public:
 	CEnemyUpdater* updater;
 
 	CEnemy();
-	~CEnemy();
+	virtual ~CEnemy();
 
 	BOOL CheckHit(int,int,int);
 

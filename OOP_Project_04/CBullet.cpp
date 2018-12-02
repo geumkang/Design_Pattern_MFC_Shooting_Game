@@ -122,5 +122,5 @@ void CBullet::Update() {
 
 void CBullet::Render(HDC hdc) {
 	//DrawBody(hdc);
-	this->renderer->render(hdc);
+	this->renderer->Render(hdc);
 }
