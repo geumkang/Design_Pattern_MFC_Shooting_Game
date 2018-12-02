@@ -3,11 +3,12 @@
 
 #include <windows.h>
 
+#include "CGameObject.h"
 #include "CTransform.h"
 #include "CHitRenderer.h"
 #include "CHitUpdater.h"
 
-class CHit {
+class CHit : public CGameObject{
 	int nHit;
 
 	/*COLORREF HitColor[MAX_Hit_COLOR];
@@ -19,7 +20,7 @@ public:
 	CHitUpdater* updater;
 
 	CHit();
-	~CHit();
+	virtual ~CHit();
 
 	void Update();
 	void Render(HDC);

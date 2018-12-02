@@ -23,6 +23,7 @@
     <ClInclude Include="CEnemyUpdater.h" />
     <ClInclude Include="CEnemy_Player.h" />
     <ClInclude Include="CGameHost.h" />
+    <ClInclude Include="CGameObject.h" />
     <ClInclude Include="CHit.h" />
     <ClInclude Include="CHitRenderer.h" />
     <ClInclude Include="CHitUpdater.h" />
@@ -32,10 +33,12 @@
     <ClInclude Include="CPlayer.h" />
     <ClInclude Include="CPlayerRenderer.h" />
     <ClInclude Include="CPlayerUpdater.h" />
+    <ClInclude Include="CRenderer.h" />
     <ClInclude Include="CTime.h" />
     <ClInclude Include="CTimeRenderer.h" />
     <ClInclude Include="CTimeUpdater.h" />
     <ClInclude Include="CTransform.h" />
+    <ClInclude Include="CUpdater.h" />
     <ClInclude Include="PlayerDownCommand.h" />
     <ClInclude Include="PlayerLeftCommand.h" />
     <ClInclude Include="PlayerRightCommand.h" />
@@ -54,6 +57,7 @@
     <ClCompile Include="CEnemyRenderer.cpp" />
     <ClCompile Include="CEnemyUpdater.cpp" />
     <ClCompile Include="CGameHost.cpp" />
+    <ClCompile Include="CGameObject.cpp" />
     <ClCompile Include="CHit.cpp" />
     <ClCompile Include="CHitRenderer.cpp" />
     <ClCompile Include="CHitUpdater.cpp" />
@@ -63,10 +67,12 @@
     <ClCompile Include="CPlayer.cpp" />
     <ClCompile Include="CPlayerRenderer.cpp" />
     <ClCompile Include="CPlayerUpdater.cpp" />
+    <ClCompile Include="CRenderer.cpp" />
     <ClCompile Include="CTime.cpp" />
     <ClCompile Include="CTimeRenderer.cpp" />
     <ClCompile Include="CTimeUpdater.cpp" />
     <ClCompile Include="CTransform.cpp" />
+    <ClCompile Include="CUpdater.cpp" />
     <ClCompile Include="PlayerDownCommand.cpp" />
     <ClCompile Include="PlayerLeftCommand.cpp" />
     <ClCompile Include="PlayerRightCommand.cpp" />

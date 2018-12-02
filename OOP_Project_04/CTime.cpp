@@ -18,7 +18,7 @@ void CTime::Update() {
 }
 
 void CTime::Render(HDC hdc) {
-	this->renderer->render(hdc);
+	this->renderer->Render(hdc);
 	/*TCHAR szTimeString[32];
 
 	wsprintf(szTimeString,TEXT("%-5d Time!"),nTime);

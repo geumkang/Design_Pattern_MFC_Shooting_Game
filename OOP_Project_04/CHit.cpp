@@ -24,7 +24,7 @@ void CHit::Update() {
 }
 
 void CHit::Render(HDC hdc) {
-	this->renderer->render(hdc);
+	this->renderer->Render(hdc);
 }
 
 void CHit::InitHit() {

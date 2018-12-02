@@ -7,10 +7,10 @@
 #include "CEnemy_Player.h"
 #include "CCombo.h"
 /*KCH*/
+#include "CGameObject.h"
 #include "CTransform.h"
 #include "CPlayerRenderer.h"
 #include "CPlayerUpdater.h"
-
 
 using namespace std;
 #define MAX_SPEED 5
@@ -20,7 +20,7 @@ using namespace std;
 
 //class CBulletMaker;
 
-class CPlayer {
+class CPlayer : public CGameObject{
 	HBITMAP hPlayerBit;
 
 	int AlphaSpeed;
@@ -40,12 +40,12 @@ class CPlayer {
 	void Special_Attack(CCombo*);
 public:
 	/*KCH*/
-	CTransform *transform;
+	CTransform* transform;
 	CPlayerRenderer* renderer;
 	CPlayerUpdater* updater;
 
 	CPlayer(HINSTANCE);
-	~CPlayer();
+	virtual ~CPlayer();
 
 	void KeyUpdate(SHORT,CCombo*);
 	int Update(CEnemy*, CHp*, CCombo*);

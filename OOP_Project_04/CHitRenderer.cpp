@@ -18,7 +18,7 @@ CHitRenderer::~CHitRenderer()
 	DeleteObject(hHitFont);
 }
 
-void CHitRenderer::render(HDC hdc)
+void CHitRenderer::Render(HDC hdc)
 {
 	TCHAR szHitString[32];
 

@@ -11,7 +11,7 @@ CPlayerRenderer::~CPlayerRenderer()
 
 }
 
-void CPlayerRenderer::render(HDC hdc)
+void CPlayerRenderer::Render(HDC hdc)
 {
 	//DrawPlayerBody(hdc);
 

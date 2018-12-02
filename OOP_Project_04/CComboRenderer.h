@@ -1,6 +1,6 @@
 #pragma once
 
-#include <windows.h>
+#include <Windows.h>
 
 #define MAX_COMBO_COLOR 4
 
@@ -17,7 +17,7 @@ public:
 
 	CComboRenderer(CTransform *transform);
 	~CComboRenderer();
-	void render(HDC);
+	void Render(HDC);
 	void setCombo(int*);
 };
 

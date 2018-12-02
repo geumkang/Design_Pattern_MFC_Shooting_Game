@@ -86,7 +86,7 @@ void CPlayer::Attack(CCombo* Combo) {
 	//Bullet->PushBody(new CTransform(GetX() + GetSize() / 2 - 1, GetY()), Combo->GetCombo());
 }
 
-// ÇÊ»ì±â ´É·Â ¼³Á¤
+// ï¿½Ê»ï¿½ï¿½ï¿½ ï¿½É·ï¿½ ï¿½ï¿½ï¿½ï¿½
 void CPlayer::Special_Attack(CCombo* Combo) {
 	if(special_count > 0)
 		while(true)
@@ -115,7 +115,7 @@ int CPlayer::Update(CEnemy *Enemy, CHp *Hp, CCombo *Combo) {
 
 void CPlayer::Render(HDC hdc) {
 
-	this->renderer->render(hdc);
+	this->renderer->Render(hdc);
 	//Bullet->Render(hdc);
 }
 

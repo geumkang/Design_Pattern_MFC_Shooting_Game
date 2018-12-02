@@ -18,7 +18,7 @@ void CCombo::Update() {
 }
 
 void CCombo::Render(HDC hdc) {
-	this->renderer->render(hdc);
+	this->renderer->Render(hdc);
 }
 
 void CCombo::InitCombo() {

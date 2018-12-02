@@ -18,7 +18,7 @@ public:
 
 	CHitRenderer(CTransform *transform);
 	~CHitRenderer();
-	void render(HDC);
+	void Render(HDC);
 	void setHit(int*);
 };
 
