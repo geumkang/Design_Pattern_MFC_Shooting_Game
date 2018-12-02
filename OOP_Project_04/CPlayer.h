@@ -18,7 +18,7 @@ using namespace std;
 #define UPGRADE 0
 #define NON_UPGRADE 1
 
-class CBulletMaker;
+//class CBulletMaker;
 
 class CPlayer {
 	HBITMAP hPlayerBit;
@@ -26,8 +26,8 @@ class CPlayer {
 	int AlphaSpeed;
 	int PreKey;
 	vector<CPlayerBody*> Body;
-	CBulletMaker *Bullet;
-	BOOL BulletMode;
+	//CBulletMaker *Bullet;
+	bool BulletMode;
 
 	void DrawPlayerBody(HDC);
 	//void DrawPlayer(HDC);
@@ -53,6 +53,7 @@ public:
 
 	BOOL CheckHit(int,int,int);
 	BOOL IsBullet();
+	void setIsBullet(bool IsBullet);
 
 	int GetX() { return this->transform->getX();}
 	int GetY() { return this->transform->getY();}

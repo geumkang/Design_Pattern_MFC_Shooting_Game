@@ -13,7 +13,7 @@
 #define UPGRADE 0
 #define NON_UPGRADE 1
 
-class CBulletMaker;
+//class CBulletMaker;
 class CEnemyRenderer;
 class CEnemyUpdater;
 class CTransform;
@@ -25,7 +25,7 @@ class CEnemy {
 	int ComboDelay;
 	BOOL BulletMode;
 
-	CBulletMaker *Bullet;
+	//CBulletMaker *Bullet;
 public:
 
 	CTransform *transform;

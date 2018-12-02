@@ -16,15 +16,16 @@ CEnemy::CEnemy() {
 	ComboDelay = 20;
 	BulletMode = NON_UPGRADE;
 	
-	Bullet = new CBulletMaker(TRUE);
+	//Bullet = new CBulletMaker(TRUE);
 }
 
 CEnemy::~CEnemy() {
-	delete Bullet;
+	//delete Bullet;
 }
 
 BOOL CEnemy::CheckHit(int _X, int _Y, int _Size) {
-	return (Bullet->CheckHit(new CTransform(_X, _Y), _Size));
+	//return (Bullet->CheckHit(new CTransform(_X, _Y), _Size));
+	return false;
 }
 
 void CEnemy::Update(CPlayer *User, CHp *Hp, CCombo *Combo, CHit *Hit) {
@@ -86,18 +87,18 @@ AFTER_MOVE_CAL:
 	}
 	if (BulletMode == NON_UPGRADE) {
 		CTransform* temp = new CTransform(transform->getX() + transform->getSize() / 2 - 1, transform->getY());
-		Bullet->PushBody(temp, 0);
+		//Bullet->PushBody(temp, 0);
 	}
 	else if (BulletMode == UPGRADE) {
 		CTransform* temp = new CTransform(transform->getX() + transform->getSize() / 2, transform->getY());
-		Bullet->PushBody(temp, 10);
+		//Bullet->PushBody(temp, 10);
 	}
-	Bullet->Update();
+	//Bullet->Update();
 	if(ComboDelay > 0) ComboDelay--;
 }
 
 void CEnemy::Render(HDC hdc) {
 	this->renderer->render(hdc);
 
-	Bullet->Render(hdc);
+	//Bullet->Render(hdc);
 }
