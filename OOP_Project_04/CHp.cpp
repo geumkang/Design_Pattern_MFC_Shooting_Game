@@ -1,22 +1,29 @@
 #include "CHp.h"
+#include "CTransform.h"
+#include "CHpRenderer.h"
+#include "CPlayerHpRenderer.h"
+#include "CEnemyHpRenderer.h"
 
 CHp::CHp(int X, int Y, int _User) : User(_User), MaxHp(300) {
 	Hp = MaxHp;
 	Hp = 200;
-	this->X = X, this->Y = Y;
-
+	this->transform = new CTransform(X, Y);
+	if (User == CHP_PLAYER) {
+		this->renderer = new CPlayerHpRenderer(transform);
+		renderer->setHp(&Hp);
+	} else if (User == CHP_ENEMY) {
+		this->renderer = new CEnemyHpRenderer(transform);
+		renderer->setHp(&Hp);
+	}
+/*
 	NormalBrush = CreateSolidBrush(RGB(255,0,0));
 	DangerBrush = CreateSolidBrush(RGB(180,225,45));
 	BlankBrush = CreateSolidBrush(RGB(128,128,128));
 	NullPen = (HPEN)GetStockObject(NULL_PEN);
-	Mode = CHP_NORMAL;
+	Mode = CHP_NORMAL;*/
 }
 
 CHp::~CHp() {
-	DeleteObject(NormalBrush);
-	DeleteObject(DangerBrush);
-	DeleteObject(BlankBrush);
-	DeleteObject(NullPen);
 }
 
 //////////////////////////////////////////////////
@@ -36,10 +43,10 @@ void CHp::SetHp(int Hp) {
 void CHp::MovHp(int Hp) {
 	this->Hp += Hp;
 }
-
-void CHp::SetMode(int Mode) {
-	this->Mode = Mode;
-}
+//
+//void CHp::SetMode(int Mode) {
+//	this->Mode = Mode;
+//}
 
 /////////////////////////////////////////////////
 
@@ -47,7 +54,8 @@ void CHp::Update() {
 }
 
 void CHp::Render(HDC hdc) {
-	HBRUSH OldBrush;
+	this->renderer->render(hdc);
+	/*HBRUSH OldBrush;
 	HBRUSH OldPen = (HBRUSH)SelectObject(hdc,NullPen);
 	int status = (int)((double)Hp/(double)MaxHp*250);
 	if(Mode==CHP_NORMAL) {
@@ -67,5 +75,5 @@ void CHp::Render(HDC hdc) {
 		if(User == CHP_ENEMY)  Rectangle(hdc,X,Y,X+250-status,Y+15);
 		SelectObject(hdc,OldBrush);
 	}
-	SelectObject(hdc,OldPen);
+	SelectObject(hdc,OldPen);*/
 }

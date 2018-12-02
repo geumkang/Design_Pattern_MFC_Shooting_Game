@@ -9,16 +9,20 @@
 #define CHP_PLAYER 1
 #define CHP_ENEMY  2
 
+class CTransform;
+class CHpRenderer;
+
 class CHp {
 	const int MaxHp;
 	const int User;
 	int Hp;
-	int Mode;
+	//int Mode;
 
-	HBRUSH NormalBrush, DangerBrush;
+	/*HBRUSH NormalBrush, DangerBrush;
 	HBRUSH BlankBrush;
-	HPEN NullPen;
-	int X, Y;
+	HPEN NullPen;*/
+	CTransform* transform;
+	CHpRenderer* renderer;
 
 public:
 	CHp(int,int,int);
@@ -28,7 +32,7 @@ public:
 	int GetHp();
 	void SetHp(int Hp);
 	void MovHp(int Hp);
-	void SetMode(int Mode);
+	//void SetMode(int Mode);
 
 	void Update();
 	void Render(HDC);

@@ -19,6 +19,7 @@
     <ClInclude Include="CComboRenderer.h" />
     <ClInclude Include="CComboUpdater.h" />
     <ClInclude Include="CEnemy.h" />
+    <ClInclude Include="CEnemyHpRenderer.h" />
     <ClInclude Include="CEnemyRenderer.h" />
     <ClInclude Include="CEnemyUpdater.h" />
     <ClInclude Include="CEnemy_Player.h" />
@@ -27,9 +28,11 @@
     <ClInclude Include="CHitRenderer.h" />
     <ClInclude Include="CHitUpdater.h" />
     <ClInclude Include="CHp.h" />
+    <ClInclude Include="CHpRenderer.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="Controller.h" />
     <ClInclude Include="CPlayer.h" />
+    <ClInclude Include="CPlayerHpRenderer.h" />
     <ClInclude Include="CPlayerRenderer.h" />
     <ClInclude Include="CPlayerUpdater.h" />
     <ClInclude Include="CTime.h" />
@@ -51,6 +54,7 @@
     <ClCompile Include="CComboRenderer.cpp" />
     <ClCompile Include="CComboUpdater.cpp" />
     <ClCompile Include="CEnemy.cpp" />
+    <ClCompile Include="CEnemyHpRenderer.cpp" />
     <ClCompile Include="CEnemyRenderer.cpp" />
     <ClCompile Include="CEnemyUpdater.cpp" />
     <ClCompile Include="CGameHost.cpp" />
@@ -61,6 +65,7 @@
     <ClCompile Include="Command.cpp" />
     <ClCompile Include="Controller.cpp" />
     <ClCompile Include="CPlayer.cpp" />
+    <ClCompile Include="CPlayerHpRenderer.cpp" />
     <ClCompile Include="CPlayerRenderer.cpp" />
     <ClCompile Include="CPlayerUpdater.cpp" />
     <ClCompile Include="CTime.cpp" />
