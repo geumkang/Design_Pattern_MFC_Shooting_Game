@@ -12,6 +12,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CBullet.h" />
+    <ClInclude Include="CBulletMaker.h" />
+    <ClInclude Include="CBulletRenderer.h" />
+    <ClInclude Include="CBulletUpdater.h" />
     <ClInclude Include="CCombo.h" />
     <ClInclude Include="CComboRenderer.h" />
     <ClInclude Include="CComboUpdater.h" />
@@ -41,6 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CBullet.cpp" />
+    <ClCompile Include="CBulletMaker.cpp" />
+    <ClCompile Include="CBulletRenderer.cpp" />
+    <ClCompile Include="CBulletUpdater.cpp" />
     <ClCompile Include="CCombo.cpp" />
     <ClCompile Include="CComboRenderer.cpp" />
     <ClCompile Include="CComboUpdater.cpp" />

@@ -1,4 +1,8 @@
 #include "CEnemy.h"
+#include "CTransform.h"
+#include "CEnemyRenderer.h"
+#include "CEnemyUpdater.h"
+#include "CBulletMaker.h"
 
 CEnemy::CEnemy() {
 	
@@ -12,7 +16,7 @@ CEnemy::CEnemy() {
 	ComboDelay = 20;
 	BulletMode = NON_UPGRADE;
 	
-	Bullet = new CBullet(TRUE);
+	Bullet = new CBulletMaker(TRUE);
 }
 
 CEnemy::~CEnemy() {
@@ -20,7 +24,7 @@ CEnemy::~CEnemy() {
 }
 
 BOOL CEnemy::CheckHit(int _X, int _Y, int _Size) {
-	return (Bullet->CheckHit(_X,_Y,_Size));
+	return (Bullet->CheckHit(new CTransform(_X, _Y), _Size));
 }
 
 void CEnemy::Update(CPlayer *User, CHp *Hp, CCombo *Combo, CHit *Hit) {
@@ -80,10 +84,14 @@ AFTER_MOVE_CAL:
 			transform->setX(transform->getX() + 1);
 		}
 	}
-	if(BulletMode == NON_UPGRADE)
-		Bullet->PushBody(transform->getX() + transform->getSize()/2-1, transform->getY(), 0);
-	else if(BulletMode == UPGRADE)
-		Bullet->PushBody(transform->getX() + transform->getSize()/2, transform->getY(), 10);
+	if (BulletMode == NON_UPGRADE) {
+		CTransform* temp = new CTransform(transform->getX() + transform->getSize() / 2 - 1, transform->getY());
+		Bullet->PushBody(temp, 0);
+	}
+	else if (BulletMode == UPGRADE) {
+		CTransform* temp = new CTransform(transform->getX() + transform->getSize() / 2, transform->getY());
+		Bullet->PushBody(temp, 10);
+	}
 	Bullet->Update();
 	if(ComboDelay > 0) ComboDelay--;
 }

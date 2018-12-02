@@ -1,5 +1,7 @@
 #include "CPlayer.h"
 #include "Resource.h"
+#include "CBulletMaker.h"
+
 #pragma comment(lib,"msimg32.lib")
 
 int special_count = 3;
@@ -14,7 +16,7 @@ CPlayer::CPlayer(HINSTANCE hInstance) {
 	this->updater = new CPlayerUpdater(transform);
 
 	AlphaSpeed = 0, PreKey = 0;
-	Bullet = new CBullet(FALSE);
+	Bullet = new CBulletMaker(FALSE);
 	BulletMode = NON_UPGRADE;
 }
 
@@ -32,7 +34,6 @@ CPlayer::~CPlayer() {
 //}
 
 void CPlayer::KeyUpdate(SHORT wParam, CCombo *Combo) {
-	int i;
 	if(wParam==VK_LEFT) { //Pressed Left Key
 		//updater->pushLeft();
 	} else if(wParam==VK_RIGHT) { //Pressed Right Key
@@ -81,7 +82,7 @@ void CPlayer::PopBody() {
 }
 
 void CPlayer::Attack(CCombo* Combo) {
-	Bullet->PushBody(GetX()+GetSize()/2-1,GetY(),Combo->GetCombo());
+	Bullet->PushBody(new CTransform(GetX() + GetSize() / 2 - 1, GetY()), Combo->GetCombo());
 }
 
 // 필살기 능력 설정
@@ -114,14 +115,16 @@ int CPlayer::Update(CEnemy *Enemy, CHp *Hp, CCombo *Combo) {
 void CPlayer::Render(HDC hdc) {
 
 	this->renderer->render(hdc);
+	Bullet->Render(hdc);
 }
 
 BOOL CPlayer::CheckHit(int _X, int _Y, int _Size) {
-	return (Bullet->CheckHit(_X,_Y,_Size));
+	return (Bullet->CheckHit(new CTransform(_X, _Y), _Size));
 }
 
 BOOL CPlayer::IsBullet() {
 	return (Bullet->GetBulletMode());
+
 }
 
 CPlayerBody::CPlayerBody(int PosX, int PosY) {

@@ -18,13 +18,15 @@ using namespace std;
 #define UPGRADE 0
 #define NON_UPGRADE 1
 
+class CBulletMaker;
+
 class CPlayer {
 	HBITMAP hPlayerBit;
 
 	int AlphaSpeed;
 	int PreKey;
 	vector<CPlayerBody*> Body;
-	CBullet *Bullet;
+	CBulletMaker *Bullet;
 	BOOL BulletMode;
 
 	void DrawPlayerBody(HDC);

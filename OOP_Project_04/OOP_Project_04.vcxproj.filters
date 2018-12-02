@@ -79,6 +79,15 @@
     <ClCompile Include="CTimeUpdater.cpp">
       <Filter>소스 파일\Updater</Filter>
     </ClCompile>
+    <ClCompile Include="CBulletMaker.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CBulletRenderer.cpp">
+      <Filter>소스 파일\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="CBulletUpdater.cpp">
+      <Filter>소스 파일\Updater</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CBullet.h">
@@ -161,6 +170,15 @@
     </ClInclude>
     <ClInclude Include="CTimeUpdater.h">
       <Filter>헤더 파일\Updater</Filter>
+    </ClInclude>
+    <ClInclude Include="CBulletUpdater.h">
+      <Filter>헤더 파일\Updater</Filter>
+    </ClInclude>
+    <ClInclude Include="CBulletRenderer.h">
+      <Filter>헤더 파일\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="CBulletMaker.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
