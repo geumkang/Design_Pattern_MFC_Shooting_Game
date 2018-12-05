@@ -11,6 +11,7 @@ public:
 	CComboUpdater(CTransform* transform);
 	~CComboUpdater();
 	void Update();
+	void Pause();
 	void setCombo(int* nCombo);
 	void InitCombo();
 	void IncCombo();

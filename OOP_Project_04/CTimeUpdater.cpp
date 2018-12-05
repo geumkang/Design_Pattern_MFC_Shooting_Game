@@ -16,6 +16,10 @@ void CTimeUpdater::Update()
 	this->IncTime();
 }
 
+void CTimeUpdater::Pause()
+{
+}
+
 void CTimeUpdater::InitTime() {
 	(*nTime) = 0;
 }

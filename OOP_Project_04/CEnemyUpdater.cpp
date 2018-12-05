@@ -51,3 +51,7 @@ void CEnemyUpdater::Update()
 	}
 	delay++;
 }
+
+void CEnemyUpdater::Pause()
+{
+}

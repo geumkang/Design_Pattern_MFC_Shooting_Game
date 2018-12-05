@@ -1,87 +1,255 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="CBullet.cpp" />
-    <ClCompile Include="CBulletMaker.cpp" />
-    <ClCompile Include="CBulletRenderer.cpp" />
-    <ClCompile Include="CBulletUpdater.cpp" />
-    <ClCompile Include="CCombo.cpp" />
-    <ClCompile Include="CComboRenderer.cpp" />
-    <ClCompile Include="CComboUpdater.cpp" />
-    <ClCompile Include="CEnemy.cpp" />
-    <ClCompile Include="CEnemyHpRenderer.cpp" />
-    <ClCompile Include="CEnemyRenderer.cpp" />
-    <ClCompile Include="CEnemyUpdater.cpp" />
-    <ClCompile Include="CGameHost.cpp" />
-    <ClCompile Include="CGameObject.cpp" />
-    <ClCompile Include="CHit.cpp" />
-    <ClCompile Include="CHitRenderer.cpp" />
-    <ClCompile Include="CHitUpdater.cpp" />
-    <ClCompile Include="CHp.cpp" />
-    <ClCompile Include="Command.cpp" />
-    <ClCompile Include="Controller.cpp" />
-    <ClCompile Include="CPlayer.cpp" />
-    <ClCompile Include="CPlayerHpRenderer.cpp" />
-    <ClCompile Include="CPlayerRenderer.cpp" />
-    <ClCompile Include="CPlayerUpdater.cpp" />
-    <ClCompile Include="CRenderer.cpp" />
-    <ClCompile Include="CTime.cpp" />
-    <ClCompile Include="CTimeRenderer.cpp" />
-    <ClCompile Include="CTimeUpdater.cpp" />
-    <ClCompile Include="CTransform.cpp" />
-    <ClCompile Include="CUpdater.cpp" />
-    <ClCompile Include="PlayerDownCommand.cpp" />
-    <ClCompile Include="PlayerLeftCommand.cpp" />
-    <ClCompile Include="PlayerRightCommand.cpp" />
-    <ClCompile Include="PlayerUpCommand.cpp" />
     <ClCompile Include="WinMain.cpp" />
-    <ClCompile Include="PlayerAttackCommand.cpp" />
+    <ClCompile Include="CBulletMaker.cpp">
+      <Filter>소스파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Controller.cpp">
+      <Filter>소스파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CTransform.cpp">
+      <Filter>소스파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CGameHost.cpp" />
+    <ClCompile Include="CBullet.cpp">
+      <Filter>소스파일\CGameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="CCombo.cpp">
+      <Filter>소스파일\CGameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="CEnemy.cpp">
+      <Filter>소스파일\CGameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="CHit.cpp">
+      <Filter>소스파일\CGameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="CHp.cpp">
+      <Filter>소스파일\CGameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayer.cpp">
+      <Filter>소스파일\CGameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="CTime.cpp">
+      <Filter>소스파일\CGameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="CBulletRenderer.cpp">
+      <Filter>소스파일\CRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="CComboRenderer.cpp">
+      <Filter>소스파일\CRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="CEnemyHpRenderer.cpp">
+      <Filter>소스파일\CRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="CEnemyRenderer.cpp">
+      <Filter>소스파일\CRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="CHitRenderer.cpp">
+      <Filter>소스파일\CRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayerHpRenderer.cpp">
+      <Filter>소스파일\CRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayerRenderer.cpp">
+      <Filter>소스파일\CRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="CTimeRenderer.cpp">
+      <Filter>소스파일\CRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="CBulletUpdater.cpp">
+      <Filter>소스파일\CUpdater</Filter>
+    </ClCompile>
+    <ClCompile Include="CComboUpdater.cpp">
+      <Filter>소스파일\CUpdater</Filter>
+    </ClCompile>
+    <ClCompile Include="CEnemyUpdater.cpp">
+      <Filter>소스파일\CUpdater</Filter>
+    </ClCompile>
+    <ClCompile Include="CHitUpdater.cpp">
+      <Filter>소스파일\CUpdater</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayerUpdater.cpp">
+      <Filter>소스파일\CUpdater</Filter>
+    </ClCompile>
+    <ClCompile Include="CGameObject.cpp">
+      <Filter>소스파일\CGameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerAttackCommand.cpp">
+      <Filter>소스파일\CCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerDownCommand.cpp">
+      <Filter>소스파일\CCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerLeftCommand.cpp">
+      <Filter>소스파일\CCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerRightCommand.cpp">
+      <Filter>소스파일\CCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerUpCommand.cpp">
+      <Filter>소스파일\CCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="CTimeUpdater.cpp">
+      <Filter>소스파일\CUpdater</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CBullet.h" />
-    <ClInclude Include="CBulletMaker.h" />
-    <ClInclude Include="CBulletRenderer.h" />
-    <ClInclude Include="CBulletUpdater.h" />
-    <ClInclude Include="CCombo.h" />
-    <ClInclude Include="CComboRenderer.h" />
-    <ClInclude Include="CComboUpdater.h" />
-    <ClInclude Include="CEnemy.h" />
-    <ClInclude Include="CEnemyHpRenderer.h" />
-    <ClInclude Include="CEnemyRenderer.h" />
-    <ClInclude Include="CEnemyUpdater.h" />
-    <ClInclude Include="CEnemy_Player.h" />
-    <ClInclude Include="CGameHost.h" />
-    <ClInclude Include="CGameObject.h" />
-    <ClInclude Include="CHit.h" />
-    <ClInclude Include="CHitRenderer.h" />
-    <ClInclude Include="CHitUpdater.h" />
-    <ClInclude Include="CHp.h" />
-    <ClInclude Include="CHpRenderer.h" />
-    <ClInclude Include="Command.h" />
-    <ClInclude Include="Controller.h" />
-    <ClInclude Include="CPlayer.h" />
-    <ClInclude Include="CPlayerHpRenderer.h" />
-    <ClInclude Include="CPlayerRenderer.h" />
-    <ClInclude Include="CPlayerUpdater.h" />
-    <ClInclude Include="CRenderer.h" />
-    <ClInclude Include="CTime.h" />
-    <ClInclude Include="CTimeRenderer.h" />
-    <ClInclude Include="CTimeUpdater.h" />
-    <ClInclude Include="CTransform.h" />
-    <ClInclude Include="CUpdater.h" />
-    <ClInclude Include="PlayerDownCommand.h" />
-    <ClInclude Include="PlayerLeftCommand.h" />
-    <ClInclude Include="PlayerRightCommand.h" />
-    <ClInclude Include="PlayerUpCommand.h" />
+    <ClInclude Include="CEnemy_Player.h">
+      <Filter>헤더파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller.h">
+      <Filter>헤더파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CTransform.h">
+      <Filter>헤더파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CBulletMaker.h">
+      <Filter>헤더파일</Filter>
+    </ClInclude>
     <ClInclude Include="resource.h" />
-    <ClInclude Include="PlayerAttackCommand.h" />
+    <ClInclude Include="CGameHost.h" />
+    <ClInclude Include="CBullet.h">
+      <Filter>헤더파일\CGameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="CCombo.h">
+      <Filter>헤더파일\CGameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="CEnemy.h">
+      <Filter>헤더파일\CGameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="CHit.h">
+      <Filter>헤더파일\CGameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="CGameObject.h">
+      <Filter>헤더파일\CGameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="CHp.h">
+      <Filter>헤더파일\CGameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlayer.h">
+      <Filter>헤더파일\CGameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="CTime.h">
+      <Filter>헤더파일\CGameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="CBulletRenderer.h">
+      <Filter>헤더파일\CRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="CComboRenderer.h">
+      <Filter>헤더파일\CRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="CEnemyHpRenderer.h">
+      <Filter>헤더파일\CRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="CEnemyRenderer.h">
+      <Filter>헤더파일\CRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="CHitRenderer.h">
+      <Filter>헤더파일\CRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="CHpRenderer.h">
+      <Filter>헤더파일\CRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlayerHpRenderer.h">
+      <Filter>헤더파일\CRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="CBulletUpdater.h">
+      <Filter>헤더파일\CUpdater</Filter>
+    </ClInclude>
+    <ClInclude Include="CComboUpdater.h">
+      <Filter>헤더파일\CUpdater</Filter>
+    </ClInclude>
+    <ClInclude Include="CEnemyUpdater.h">
+      <Filter>헤더파일\CUpdater</Filter>
+    </ClInclude>
+    <ClInclude Include="CHitUpdater.h">
+      <Filter>헤더파일\CUpdater</Filter>
+    </ClInclude>
+    <ClInclude Include="CTimeUpdater.h">
+      <Filter>헤더파일\CUpdater</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlayerUpdater.h">
+      <Filter>헤더파일\CUpdater</Filter>
+    </ClInclude>
+    <ClInclude Include="CUpdater.h">
+      <Filter>헤더파일\CUpdater</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlayerRenderer.h">
+      <Filter>헤더파일\CRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="CTimeRenderer.h">
+      <Filter>헤더파일\CRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerAttackCommand.h">
+      <Filter>헤더파일\CCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerDownCommand.h">
+      <Filter>헤더파일\CCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerLeftCommand.h">
+      <Filter>헤더파일\CCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerRightCommand.h">
+      <Filter>헤더파일\CCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerUpCommand.h">
+      <Filter>헤더파일\CCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="Command.h">
+      <Filter>헤더파일\CCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="CRenderer.h">
+      <Filter>헤더파일\CRenderer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="OOP_Project_04.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Character.bmp" />
-    <Image Include="Loading.bmp" />
-    <Image Include="Map.bmp" />
+    <Image Include="Character.bmp">
+      <Filter>리소스파일</Filter>
+    </Image>
+    <Image Include="Loading.bmp">
+      <Filter>리소스파일</Filter>
+    </Image>
+    <Image Include="Map.bmp">
+      <Filter>리소스파일</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="헤더파일">
+      <UniqueIdentifier>{376b4f84-0104-4990-a266-ffecd61050b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스파일">
+      <UniqueIdentifier>{026744b8-c622-49f7-a5b2-49a32a3cf858}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스파일\CGameObject">
+      <UniqueIdentifier>{1944a285-0251-4355-9f71-d50c6dea38f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스파일\CRenderer">
+      <UniqueIdentifier>{31bb5a9a-2e78-43f3-b719-f9c2cd0cb1fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스파일\CUpdater">
+      <UniqueIdentifier>{34899027-3072-40e5-b594-b3019ad8071f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스파일\CCommand">
+      <UniqueIdentifier>{547ff4f5-36b1-48c4-be0e-77197b0c4365}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더파일\CGameObject">
+      <UniqueIdentifier>{5227e7e6-c284-464c-a048-82d2ec2f89fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더파일\CRenderer">
+      <UniqueIdentifier>{a8d6db3b-c6c8-426e-82f8-ec1ce1060a0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더파일\CUpdater">
+      <UniqueIdentifier>{e95955d6-df0d-49c8-bed8-9422e754711b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더파일\CCommand">
+      <UniqueIdentifier>{a08fd6ab-09c4-4302-a37a-e72648a75ae8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="리소스파일">
+      <UniqueIdentifier>{53b3dc22-2f11-49d8-8779-1b6b44c4eba9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

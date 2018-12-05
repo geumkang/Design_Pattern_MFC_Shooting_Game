@@ -30,5 +30,6 @@ public:
 	void pushSpecial();
 
 	void Update();
+	void Pause();
 };
 

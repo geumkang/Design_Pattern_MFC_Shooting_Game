@@ -22,6 +22,10 @@ void CBulletUpdater::Update()
 	}
 }
 
+void CBulletUpdater::Pause()
+{
+}
+
 void CBulletUpdater::reverse_direction() 
 {
 	isEnemy = !isEnemy;

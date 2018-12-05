@@ -78,3 +78,7 @@ void CPlayerUpdater::pushSpecial()
 void CPlayerUpdater::Update()
 {
 }
+
+void CPlayerUpdater::Pause()
+{
+}

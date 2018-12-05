@@ -17,6 +17,7 @@ public:
 	~CBulletUpdater();
 
 	void Update();
+	void Pause();
 	void reverse_direction();
 	bool getIsEnemy();
 };

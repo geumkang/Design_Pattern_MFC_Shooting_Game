@@ -14,3 +14,7 @@ CHitUpdater::~CHitUpdater()
 void CHitUpdater::Update()
 {
 }
+
+void CHitUpdater::Pause()
+{
+}

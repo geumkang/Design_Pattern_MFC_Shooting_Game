@@ -22,5 +22,6 @@ public:
 	void moveRight();
 	void moveLeft();
 	void Update();
+	void Pause();
 };
 

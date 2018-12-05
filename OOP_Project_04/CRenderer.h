@@ -4,8 +4,6 @@
 class CRenderer
 {
 public:
-	CRenderer();
-	~CRenderer();
 
 	virtual void Render(HDC hdc) = 0;
 };

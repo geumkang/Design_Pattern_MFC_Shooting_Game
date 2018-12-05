@@ -10,5 +10,6 @@ public:
 	CHitUpdater(CTransform* transform);
 	~CHitUpdater();
 	void Update();
+	void Pause();
 };
 

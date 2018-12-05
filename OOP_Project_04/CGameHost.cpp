@@ -19,6 +19,10 @@ CGameHost::CGameHost(HINSTANCE hInstance) {
 	BgGround = LoadBitmap(hInstance,MAKEINTRESOURCE(IDB_MAP)); //Init
 	Player = new CPlayer(hInstance);
 
+	renderers.reserve(10000);
+	updaters.reserve(10000);
+	bullets.reserve(10000);
+
 	controller = new Controller();
 	Command* upCommand = new PlayerUpCommand(Player->updater);
 	controller->setUpCommand(upCommand);
@@ -122,66 +126,71 @@ void CGameHost::Release() {
 
 void CGameHost::run()
 {
-	int playerX = this->Player->transform->getX();
-	int playerY = this->Player->transform->getY();
-	int playerSize = this->Player->transform->getSize();
-	int enemyX = this->Enemy->transform->getX();
-	int enemyY = this->Enemy->transform->getY();
-	int enemySize = this->Enemy->transform->getSize();
-	for (int i = CGameHost::bullets.size() - 1; i > -1; i--)
-	{
-		CBullet* bullet = CGameHost::bullets[i];
-		int bulletX = bullet->transform->getX();
-		int bulletY = bullet->transform->getY();
-		int bulletSize = bullet->transform->getSize();
+	if (GameStatus == STATUS_RELEASE) {
+		int playerX = this->Player->transform->getX();
+		int playerY = this->Player->transform->getY();
+		int playerSize = this->Player->transform->getSize();
+		int enemyX = this->Enemy->transform->getX();
+		int enemyY = this->Enemy->transform->getY();
+		int enemySize = this->Enemy->transform->getSize();
+		for (int i = CGameHost::bullets.size() - 1; i > -1; i--)
+		{
+			CBullet* bullet = CGameHost::bullets[i];
+			int bulletX = bullet->transform->getX();
+			int bulletY = bullet->transform->getY();
+			int bulletSize = bullet->transform->getSize();
 
-		if (!bullet->isAlive)
-			continue;
+			if (!bullet->isAlive)
+				continue;
 
-		if (((CBulletUpdater*)bullet->updater)->getIsEnemy()) {
-			if (playerX < bulletX
-				&& playerX + playerSize > bulletX
-				&& playerY < bulletY
-				&& playerY + playerSize > bulletY) {
+			if (((CBulletUpdater*)bullet->updater)->getIsEnemy()) {
+				if (playerX < bulletX
+					&& playerX + playerSize > bulletX
+					&& playerY < bulletY
+					&& playerY + playerSize > bulletY) {
 
-				this->PlayerHp->MovHp(-3);
+					this->PlayerHp->MovHp(-3);
 
-				bullet->isAlive = false;
-			}	
-		}
-		if (!((CBulletUpdater*)bullet->updater)->getIsEnemy()) {
-			if (enemyX < bulletX
-				&& enemyX + enemySize > bulletX
-				&& enemyY < bulletY
-				&& enemyY + enemySize > bulletY) {
+					bullet->isAlive = false;
+				}
+			}
+			if (!((CBulletUpdater*)bullet->updater)->getIsEnemy()) {
+				if (enemyX < bulletX
+					&& enemyX + enemySize > bulletX
+					&& enemyY < bulletY
+					&& enemyY + enemySize > bulletY) {
 
-				this->EnemyHp->MovHp(-3);
-				this->Hit->IncHit();
-				
-				((CComboUpdater*)this->Combo->updater)->IncCombo();
-				
-				bullet->isAlive = false;
+					this->EnemyHp->MovHp(-3);
+					this->Hit->IncHit();
+
+					((CComboUpdater*)this->Combo->updater)->IncCombo();
+
+					bullet->isAlive = false;
+				}
 			}
 		}
+		/* Enemy Move */
+
+		/* LEFT? RIGHT? */
+		srand(GetTickCount());
+		bool MoveMode = (enemyX > playerX);
+		MoveMode = MoveMode & (rand() % 7 < 5);
+		((CEnemyUpdater*)this->Enemy->updater)->move(MoveMode);
+
+
+		/* Delaying */
+		Delay++;
+		if (Delay == 6) Delay = 0;
 	}
-	/* Enemy Move */
-
-	/* LEFT? RIGHT? */
-	srand(GetTickCount());
-	bool MoveMode = (enemyX > playerX);
-	MoveMode = MoveMode & (rand()%7 < 5);
-	((CEnemyUpdater*)this->Enemy->updater)->move(MoveMode);
-
-
-	/* Delaying */
-	Delay++;
-	if (Delay == 6) Delay = 0;
 }
 
 CGameHost* CGameHost::newGameHost(HINSTANCE hInstance)
 {
 	if (CGameHost::gameHost != NULL) {
 		DeleteObject(CGameHost::gameHost);
+		renderers.clear();
+		updaters.clear();
+		bullets.clear();
 		CGameHost::gameHost = new CGameHost(hInstance);
 	}
 	return CGameHost::gameHost;

@@ -20,6 +20,10 @@ void CComboUpdater::Update()
 	comboCount--;
 }
 
+void CComboUpdater::Pause()
+{
+}
+
 void CComboUpdater::setCombo(int *nCombo)
 {
 	this->nCombo = nCombo;

@@ -13,6 +13,7 @@ public:
 	~CTimeUpdater();
 
 	void Update();
+	void Pause();
 	void InitTime();
 	void IncTime();
 	int GetTime();
