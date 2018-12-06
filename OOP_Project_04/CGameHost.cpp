@@ -59,11 +59,11 @@ int CGameHost::Update() {
 		}
 		//Enemy->Update(Player,EnemyHp,Combo,Hit);
 		//Time->IncTime();
-	}
 
-	for (int i = 0; i < updaters.size(); i++)
-	{
-		updaters.at(i)->Update();
+		for (int i = 0; i < updaters.size(); i++)
+		{
+			updaters.at(i)->Update();
+		}
 	}
 
 	run();
@@ -118,10 +118,18 @@ void CGameHost::DrawHp(HDC hdc) {
 
 void CGameHost::Pause() {
 	GameStatus = STATUS_PAUSE;
+	for (int i = 0; i < updaters.size(); i++)
+	{
+		updaters.at(i)->Pause();
+	}
 }
 
 void CGameHost::Release() {
 	GameStatus = STATUS_RELEASE;
+	for (int i = 0; i < updaters.size(); i++)
+	{
+		updaters.at(i)->Update();
+	}
 }
 
 void CGameHost::run()
