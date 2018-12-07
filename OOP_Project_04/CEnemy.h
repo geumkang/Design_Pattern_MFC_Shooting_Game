@@ -38,21 +38,7 @@ public:
 
 	BOOL CheckHit(int,int,int);
 
-	void Update(CPlayer*, CHp*, CCombo*, CHit*);
 	void Render(HDC);
-};
-
-class CPlayerBody {
-	int m_PosX, m_PosY;
-public:
-	CPlayerBody(int PosX, int PosY);
-	~CPlayerBody();
-
-	int GetPosX() { return m_PosX; }
-	int GetPosY() { return m_PosY; }
-
-	void Update();
-	void Render(HDC hdc);
 };
 
 #endif

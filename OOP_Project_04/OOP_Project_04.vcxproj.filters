@@ -2,9 +2,6 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="WinMain.cpp" />
-    <ClCompile Include="CBulletMaker.cpp">
-      <Filter>소스파일</Filter>
-    </ClCompile>
     <ClCompile Include="Controller.cpp">
       <Filter>소스파일</Filter>
     </ClCompile>
@@ -102,9 +99,6 @@
       <Filter>헤더파일</Filter>
     </ClInclude>
     <ClInclude Include="CTransform.h">
-      <Filter>헤더파일</Filter>
-    </ClInclude>
-    <ClInclude Include="CBulletMaker.h">
       <Filter>헤더파일</Filter>
     </ClInclude>
     <ClInclude Include="resource.h" />

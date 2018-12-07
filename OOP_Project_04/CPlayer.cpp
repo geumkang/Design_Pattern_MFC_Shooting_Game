@@ -1,6 +1,5 @@
 #include "CPlayer.h"
 #include "Resource.h"
-#include "CBulletMaker.h"
 #include "CGameHost.h"
 #include "CPlayerRenderer.h"
 #include "CPlayerUpdater.h"
@@ -57,38 +56,6 @@ void CPlayer::KeyUpdate(SHORT wParam, CCombo *Combo) {
 	}
 }
 
-void CPlayer::DrawPlayerBody(HDC hdc) {
-	int i;
-	double color = 0;
-
-	vector<CPlayerBody*>::size_type Count = Body.size();
-	color = i = 255;
-	for(vector<CPlayerBody*>::iterator Iter=Body.begin();Iter!=Body.end();++Iter) {
-		int X = (*Iter)->GetPosX();
-		int Y = (*Iter)->GetPosY();
-		SetPixel(hdc,X,Y,RGB(255,(int)color,(int)color));
-		if(i%2==0)
-			color -= (double)(255.0/Count);
-		i++;
-	}
-}
-
-void CPlayer::PushBody(int PosX, int PosY) {
-	CPlayerBody* Body = new CPlayerBody(PosX,PosY);
-	this->Body.push_back(Body);
-}
-
-void CPlayer::PopBody() {
-	vector<CPlayerBody*>::size_type Count = Body.size();
-		if(Count>AlphaSpeed*3) {
-		for(int i=0;i<AlphaSpeed*3;i++)
-			this->Body.erase(this->Body.begin());
-	} else if(Count>AlphaSpeed*2) {
-		for(int i=0;i<AlphaSpeed*2;i++)
-			this->Body.erase(this->Body.begin());
-	}
-}
-
 void CPlayer::Attack(CCombo* Combo) {
 	this->BulletMode = true;
 	//Bullet->PushBody(new CTransform(GetX() + GetSize() / 2 - 1, GetY()), Combo->GetCombo());
@@ -107,7 +74,6 @@ void CPlayer::Special_Attack(CCombo* Combo) {
 }
 
 int CPlayer::Update(CEnemy *Enemy, CHp *Hp, CCombo *Combo) {
-	PopBody();
 	//Bullet->Update();
 	if((Enemy->CheckHit(GetX(),GetY(),ENEMY_SIZE))) {
 		Hp->MovHp(-3);
@@ -140,14 +106,4 @@ BOOL CPlayer::IsBullet() {
 void CPlayer::setIsBullet(bool IsBullet)
 {
 	this->BulletMode = IsBullet;
-}
-
-CPlayerBody::CPlayerBody(int PosX, int PosY) {
-	m_PosX = PosX, m_PosY = PosY;
-}
-
-CPlayerBody::~CPlayerBody() {
-}
-
-void CPlayerBody::Update() {
 }

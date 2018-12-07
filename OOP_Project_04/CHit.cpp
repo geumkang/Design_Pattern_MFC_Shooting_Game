@@ -15,12 +15,6 @@ CHit::CHit() {
 	CGameHost::updaters.push_back(updater);
 
 	nHit = 0;
-	/*int color = 0;
-	for(int i=0;i<MAX_Hit_COLOR;i++) {
-		HitColor[i] = RGB(255,color,color);
-		color += 256/MAX_Hit_COLOR;
-	}
-	hHitFont = CreateFont(30,0,0,0,1000,1,0,0,HANGEUL_CHARSET,0,0,0,VARIABLE_PITCH | FF_ROMAN,TEXT("¸¼Àº °íµñ"));*/
 }
 
 CHit::~CHit() {

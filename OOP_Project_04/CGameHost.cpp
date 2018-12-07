@@ -44,21 +44,14 @@ CGameHost::CGameHost(HINSTANCE hInstance) {
 	GameStatus = STATUS_RELEASE;
 }
 
-void CGameHost::KeyUpdate(WPARAM wParam) {
-	//if(GameStatus==STATUS_RELEASE) Player->KeyUpdate(wParam,Combo);
-}
-
 int CGameHost::Update() {
 	if(GameStatus == STATUS_RELEASE) {
-		//Player->Update(Enemy,PlayerHp,Combo);
 		if(PlayerHp->GetHp() <= 0) { //Win
 			return 1;
 		}
 		if(EnemyHp->GetHp() <= 0) { //Lose
 			return 2;
 		}
-		//Enemy->Update(Player,EnemyHp,Combo,Hit);
-		//Time->IncTime();
 
 		for (int i = 0; i < updaters.size(); i++)
 		{
@@ -73,21 +66,11 @@ int CGameHost::Update() {
 
 void CGameHost::Render(HDC hdc) {
 
-	/*
-	renderers->renderall();
-	*/
 	HBITMAP hBit = CreateCompatibleBitmap(hdc,600,500);
 	HDC hMemDC = CreateCompatibleDC(hdc);
 	HBITMAP OldBit = (HBITMAP)SelectObject(hMemDC,hBit);
 	Rectangle(hMemDC,0,0,600,500);
-	//Draw Code Here (Double Buffering)
 	this->DrawBgGround(hMemDC); //Draw BackGround
-	//Player->Render(hMemDC); //Draw Player
-	//Enemy->Render(hMemDC);
-	//DrawHp(hMemDC); //Draw Hp
-	//Combo->Render(hMemDC);
-	//Time->Render(hMemDC);
-	//Hit->Render(hMemDC);
 
 	//Draw Frame
 	for (int i = 0; i < renderers.size(); i++)

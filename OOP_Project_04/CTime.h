@@ -22,10 +22,6 @@ public:
 
 	void Update();
 	void Render(HDC);
-
-	/*void InitTime();
-	void IncTime();
-	int GetTime();*/
 };
 
 #endif

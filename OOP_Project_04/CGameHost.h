@@ -55,7 +55,6 @@ public:
 	}
 
 	void Render(HDC);
-	void KeyUpdate(WPARAM);
 	int Update();
 
 	void DrawBgGround(HDC);

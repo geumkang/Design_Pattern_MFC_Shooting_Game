@@ -17,10 +17,6 @@ class CHp : public CGameObject{
 	const int User;
 	int Hp;
 	//int Mode;
-
-	/*HBRUSH NormalBrush, DangerBrush;
-	HBRUSH BlankBrush;
-	HPEN NullPen;*/
 	CTransform* transform;
 	CRenderer* renderer;
 
@@ -32,7 +28,6 @@ public:
 	int GetHp();
 	void SetHp(int Hp);
 	void MovHp(int Hp);
-	//void SetMode(int Mode);
 
 	void Update();
 	void Render(HDC);

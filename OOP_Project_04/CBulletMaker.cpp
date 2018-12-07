@@ -1,8 +1,9 @@
 #include "CBulletMaker.h"
 #include "CBullet.h"
 #include "CTransform.h"
+#include "CGameHost.h"
 
-CBulletMaker::CBulletMaker(bool isEnemy)
+CBulletMaker::CBulletMaker(CTransform* player_transform, bool isEnemy)
 {
 	this->isEnemy = isEnemy;
 	this->Delay = -1;

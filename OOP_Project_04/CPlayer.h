@@ -18,24 +18,13 @@ using namespace std;
 #define UPGRADE 0
 #define NON_UPGRADE 1
 
-//class CBulletMaker;
-
 class CPlayer : public CGameObject{
 	HBITMAP hPlayerBit;
 
 	int AlphaSpeed;
 	int PreKey;
-	vector<CPlayerBody*> Body;
-	//CBulletMaker *Bullet;
 	bool BulletMode;
 
-	void DrawPlayerBody(HDC);
-	//void DrawPlayer(HDC);
-
-	void PushBody(int PosX, int PosY);
-	void PopBody();
-
-	/////////////////////////////////////////
 	void Attack(CCombo*);
 	void Special_Attack(CCombo*);
 public:

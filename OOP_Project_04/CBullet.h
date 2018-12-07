@@ -15,33 +15,8 @@ class CRenderer;
 class CUpdater;
 class CTransform;
 
-//class CBulletBody {
-//	int X, Y;
-//	HBRUSH hBrush;
-//	HBRUSH hEnemyBrush;
-//	HPEN hPen;
-//	BOOL bEnemy;
-//
-//	void MoveBody();
-//public:
-//
-//	CBulletBody(int,int,BOOL);
-//	~CBulletBody();
-//
-//	int GetX();
-//	int GetY();
-//
-//	void Update();
-//	void Render(HDC);
-//};
-
 class CBullet : public CGameObject {
-	//vector<CBullet*> Body;
-	/*int Delay;
-	BOOL IsBulletOn;*/
 	bool bEnemy;
-
-	//void DrawBody(HDC);
 public:
 
 	bool isAlive = true;
@@ -53,15 +28,8 @@ public:
 	CBullet(CTransform* player_transform, bool);
 	virtual ~CBullet();
 
-	//void PushBody(int PosX, int PosY, int Combo);
-	//void PopBody();
-
-	//BOOL GetBulletMode();
-
 	void Update();
 	void Render(HDC);
-
-	//BOOL CheckHit(int,int,int);
 };
 
 #endif

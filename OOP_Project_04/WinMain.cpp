@@ -163,7 +163,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 			}
 			// 필살기 부분
 			else if(GetAsyncKeyState('X') & 0x8000) {
-				GameHost->KeyUpdate('X');
 				InvalidateRect(hWnd,0,0);
 			}
 			n = GameHost->Update();
